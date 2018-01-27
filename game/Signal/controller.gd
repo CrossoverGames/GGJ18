@@ -30,7 +30,7 @@ func find_delay():
 	
 	if not tookoff:
 		tookoff = true
-		time = 1.0
+		time = 0.1
 	else:
 		time = rocket.elapsed_time * softener
 	
@@ -47,3 +47,5 @@ func create_signal(type):
 	
 	var delay = find_delay()
 	new_signal.set_arrive_timer_and_start(delay)
+	
+	canvas.add_signal_to_minimap(1 / delay)

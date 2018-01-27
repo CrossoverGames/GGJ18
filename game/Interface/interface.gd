@@ -9,6 +9,7 @@ enum BTN_TYPE {
 onready var action_btn = get_node("action")
 onready var left_btn = get_node("left")
 onready var right_btn = get_node("right")
+onready var minimap = get_node("minimap")
 
 signal btn_pressed
 
@@ -20,3 +21,6 @@ func _ready():
 func btn_pressed(type):
 	print(type)
 	emit_signal("btn_pressed", type)
+	
+func add_signal_to_minimap(speed):
+	minimap.create_signal(speed)
