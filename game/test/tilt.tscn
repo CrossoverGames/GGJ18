@@ -65,7 +65,7 @@ ssao_color = Color( 0, 0, 0, 1 )
 ssao_quality = 0
 ssao_blur = 3
 ssao_edge_sharpness = 4.0
-dof_blur_far_enabled = true
+dof_blur_far_enabled = false
 dof_blur_far_distance = 50.0
 dof_blur_far_transition = 20.0
 dof_blur_far_amount = 0.08
@@ -94,7 +94,7 @@ adjustment_enabled = true
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "DOF Far Blur" ]
+_sections_unfolded = [ "Background", "DOF Far Blur" ]
 
 [node name="Spatial" type="Spatial" index="0"]
 
@@ -102,7 +102,7 @@ _sections_unfolded = [ "DOF Far Blur" ]
 
 [node name="RemoteTransform" type="RemoteTransform" parent="ship" index="5"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 40 )
 remote_path = NodePath("../../Camera")
 use_global_coordinates = true
 update_position = true
@@ -129,7 +129,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96047e-07, 21.5, 40 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
