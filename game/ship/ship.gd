@@ -1,14 +1,22 @@
 extends KinematicBody
 
 signal destroyed
+signal in_danger
+
 var dead = false
 var elapsed_time = 0.0
 var flying = false
 
-export var track_distance = 5.0
+export(NodePath) var tracks_path = @"../tracks"
+onready var tracks = get_node(tracks_path)
+
+var track_number = 0
 
 func get_speed():  return $attributes/speed.value
 func has_shield(): return $attributes/shield.value > 0
+
+func _ready():
+	$actions/turn.connect("finished", self, "check_track")
 
 func damage():
 	if has_shield():
@@ -26,32 +34,33 @@ func move_left():
 	if $anim.is_playing(): return
 	$anim.play("tilt_left")
 	
-	var duration = $anim.current_animation_length / $anim.playback_speed
-	var speed = track_distance / duration
-	
-	$actions/turn.execute([Vector3(-speed, 0, 0), duration])
+	track_number -= 1
+	move_side()
 
 func move_right():
 	if $anim.is_playing(): return
 	$anim.play("tilt_right")
 	
+	track_number += 1
+	move_side()
+
+func move_side():
+	var distance = (tracks.track_x(track_number) - self.translation.x)
 	var duration = $anim.current_animation_length / $anim.playback_speed
-	var speed = track_distance / duration
-	
+	var speed = distance / duration
 	$actions/turn.execute([Vector3(speed, 0, 0), duration])
 
 func mod_speed(speed_multiplier, duration):
 	$attributes/speed.add_percent_modifier(speed_multiplier, duration)
 
 
+func check_track():
+	if track.is_in_danger(track_number):
+		emit_signal("in_danger")
+	elif track.is_outside(track_number):
+		death()
+
 # DEBUG
-
-func _ready():
-	pass#$attributes/speed.connect("changed", self, "print_speed")
-
-func print_speed():
-	print(str($attributes/speed.value))
-
 func _input(event):
 	if event.is_action_pressed("ui_left"):
 		move_left()
@@ -61,5 +70,3 @@ func _input(event):
 		mod_speed(1.0, 1.0)
 	elif event.is_action_pressed("ui_down"):
 		mod_speed(-0.5, 1.0)
-	elif event.is_action_pressed("ui_cancel"):
-		print_speed()

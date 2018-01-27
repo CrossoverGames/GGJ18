@@ -4,6 +4,8 @@ var velocity
 var duration
 var timer
 
+signal finished
+
 func _ready():
 	set_process(false)
 
@@ -16,6 +18,7 @@ func _execute(args):
 func _process(delta):
 	if timer >= duration:
 		set_process(false)
+		emit_signal("finished")
 		return
 	
 	timer += delta
