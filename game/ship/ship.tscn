@@ -146,7 +146,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 1.70755e-06 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, 10 ), Vector3( 0, 0, 0 ) ]
 }
 
-[node name="ship" type="KinematicBody" index="0" groups=[
+[node name="ship" type="KinematicBody" groups=[
 "ship",
 ]]
 
