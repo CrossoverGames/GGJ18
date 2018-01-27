@@ -41,22 +41,22 @@ func mod_speed(speed_multiplier, duration):
 	$attributes/speed.add_percent_modifier(speed_multiplier, duration)
 
 
-## DEBUG
-#
-#func _ready():
-#	pass#$attributes/speed.connect("changed", self, "print_speed")
-#
-#func print_speed():
-#	print(str($attributes/speed.value))
-#
-#func _input(event):
-#	if event.is_action_pressed("ui_left"):
-#		move_left()
-#	elif event.is_action_pressed("ui_right"):
-#		move_right()
-#	elif event.is_action_pressed("ui_up"):
-#		mod_speed(1.0, 1.0)
-#	elif event.is_action_pressed("ui_down"):
-#		mod_speed(-0.5, 1.0)
-#	elif event.is_action_pressed("ui_cancel"):
-#		print_speed()
+# DEBUG
+
+func _ready():
+	pass#$attributes/speed.connect("changed", self, "print_speed")
+
+func print_speed():
+	print(str($attributes/speed.value))
+
+func _input(event):
+	if event.is_action_pressed("ui_left"):
+		move_left()
+	elif event.is_action_pressed("ui_right"):
+		move_right()
+	elif event.is_action_pressed("ui_up"):
+		mod_speed(1.0, 1.0)
+	elif event.is_action_pressed("ui_down"):
+		mod_speed(-0.5, 1.0)
+	elif event.is_action_pressed("ui_cancel"):
+		print_speed()
