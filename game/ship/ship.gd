@@ -55,9 +55,9 @@ func mod_speed(speed_multiplier, duration):
 
 
 func check_track():
-	if track.is_in_danger(track_number):
+	if tracks.is_in_danger(track_number):
 		emit_signal("in_danger")
-	elif track.is_outside(track_number):
+	elif tracks.is_outside(track_number):
 		death()
 
 # DEBUG
