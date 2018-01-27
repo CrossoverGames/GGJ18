@@ -9,7 +9,7 @@ path="res://.import/sphere_particle.obj-dbe22d88095d616a678503af879620bb.mesh"
 files=[ "res://.import/sphere_particle.obj-dbe22d88095d616a678503af879620bb.mesh" ]
 
 source_file="res://ship/meshes/sphere_particle.obj"
-source_md5="1a54c9015759f437b09e2c1bb0bea1c4"
+source_md5="981f14174750836b3f5aad6c11aaa336"
 
 dest_files=[ "res://.import/sphere_particle.obj-dbe22d88095d616a678503af879620bb.mesh", "res://.import/sphere_particle.obj-dbe22d88095d616a678503af879620bb.mesh" ]
 dest_md5="58435288d5514220994c74a0a66f67e2"
