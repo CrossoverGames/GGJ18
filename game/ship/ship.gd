@@ -22,7 +22,10 @@ func _ready():
 enum BTN_TYPE {
 	action = 0,
 	move_left = 1,
-	move_right = 2
+	move_right = 2,
+	boost = 3,
+	brk = 4,
+	shield = 5
 }
 
 func damage():
@@ -90,6 +93,13 @@ func signal_arrived(type):
 	elif type == BTN_TYPE.move_right:
 		print("received signal move right")
 		move_right()
+	elif type == BTN_TYPE.boost:
+		print("received signal boost")
+		mod_speed(1.0, 1.0)
+	elif type == BTN_TYPE.brk:
+		print("received signal break")
+		mod_speed(-0.5, 1.0)
+
 # DEBUG
 
 func print_speed():

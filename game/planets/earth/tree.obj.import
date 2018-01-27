@@ -12,7 +12,7 @@ source_file="res://planets/earth/tree.obj"
 source_md5="078c979d8dddeaf5cd97b3becf409cc8"
 
 dest_files=[ "res://.import/tree.obj-05b0298406182673659638efe9969771.mesh", "res://.import/tree.obj-05b0298406182673659638efe9969771.mesh" ]
-dest_md5="01579a003adeb781472c20b2c3a477d8"
+dest_md5="d95442169c9dfd9ac405d7937e859811"
 
 [params]
 

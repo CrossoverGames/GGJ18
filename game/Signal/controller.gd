@@ -13,7 +13,10 @@ var tookoff = false
 enum BTN_TYPE {
 	action = 0,
 	move_left = 1,
-	move_right = 2
+	move_right = 2,
+	boost = 3,
+	brk = 4,
+	shield = 5
 }
 
 func _ready():

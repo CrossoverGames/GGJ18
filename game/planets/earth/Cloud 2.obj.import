@@ -12,7 +12,7 @@ source_file="res://planets/earth/Cloud 2.obj"
 source_md5="b97a01b1cc602aa1ae934bb7c30d8350"
 
 dest_files=[ "res://.import/Cloud 2.obj-d31220930161e0500d2da2babe27d7fb.mesh", "res://.import/Cloud 2.obj-d31220930161e0500d2da2babe27d7fb.mesh" ]
-dest_md5="0ac08798d89def5c6e25702337f6c632"
+dest_md5="23576b944051dff9a1438b2a7f960f03"
 
 [params]
 

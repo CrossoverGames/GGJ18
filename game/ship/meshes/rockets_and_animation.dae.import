@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/earth.DAE-c0428ad0dae19b97e57dea2eaf6c4c68.scn"
+path="res://.import/rockets_and_animation.dae-6f59c3de04014980219f2f7355ef8f9d.scn"
 
 [deps]
 
-source_file="res://planets/earth/earth.DAE"
-source_md5="9672365eaa310a89c388eeed18c589ba"
+source_file="res://ship/meshes/rockets_and_animation.dae"
+source_md5="beb6d0f2b61940a49520dd8c33e0cb50"
 
-dest_files=[ "res://.import/earth.DAE-c0428ad0dae19b97e57dea2eaf6c4c68.scn" ]
-dest_md5="28af5d4c554caf581e72ad0d8df9847a"
+dest_files=[ "res://.import/rockets_and_animation.dae-6f59c3de04014980219f2f7355ef8f9d.scn" ]
+dest_md5="8232d6083efbf1781d861e8b837de46c"
 
 [params]
 

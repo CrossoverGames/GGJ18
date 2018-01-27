@@ -12,7 +12,7 @@ source_file="res://planets/earth/earth.obj"
 source_md5="7f38bca51f300f24319a4aa0ca2dbc29"
 
 dest_files=[ "res://.import/earth.obj-4cf5a910df8968c5095c67c6a2747668.mesh", "res://.import/earth.obj-4cf5a910df8968c5095c67c6a2747668.mesh" ]
-dest_md5="09bd3fe43508727b19d2fa86fb932997"
+dest_md5="fff8b4603953285ef6365dbe4f464487"
 
 [params]
 
