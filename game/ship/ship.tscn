@@ -55,7 +55,9 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 1.70755e-06 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, 10 ), Vector3( 0, 0, 0 ) ]
 }
 
-[node name="ship" type="KinematicBody"]
+[node name="ship" type="KinematicBody" index="0" groups=[
+"ship",
+]]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input_ray_pickable = true
