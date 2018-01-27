@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/main_booster.obj-1dd1fcecb86e5f3fefbaf4cb0feb172e.mesh"
+
+[deps]
+
+files=[ "res://.import/main_booster.obj-1dd1fcecb86e5f3fefbaf4cb0feb172e.mesh" ]
+
+source_file="res://ship/meshes/main_booster.obj"
+source_md5="43c957b36acb1f57cb2ed7d7edf3f773"
+
+dest_files=[ "res://.import/main_booster.obj-1dd1fcecb86e5f3fefbaf4cb0feb172e.mesh", "res://.import/main_booster.obj-1dd1fcecb86e5f3fefbaf4cb0feb172e.mesh" ]
+dest_md5="2dd5b96244121136337754f4d2f3067b"
+
+[params]
+
+generate_tangents=true
