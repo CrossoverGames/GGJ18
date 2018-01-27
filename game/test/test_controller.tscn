@@ -15,6 +15,7 @@
 canvas_path = NodePath("../interface")
 rocket_path = NodePath("../ship")
 signal_path = "res://Signal/signal.tscn"
+softener = 0.2
 
 [node name="Camera" type="Camera" parent="." index="3"]
 

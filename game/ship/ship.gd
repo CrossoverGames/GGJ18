@@ -10,6 +10,12 @@ export var track_distance = 5.0
 func get_speed():  return $attributes/speed.value
 func has_shield(): return $attributes/shield.value > 0
 
+enum BTN_TYPE {
+	action = 0,
+	move_left = 1,
+	move_right = 2
+}
+
 func damage():
 	if has_shield():
 		$attributes/shield.raw_value -= 1
@@ -43,7 +49,20 @@ func move_right():
 func mod_speed(speed_multiplier, duration):
 	$attributes/speed.add_percent_modifier(speed_multiplier, duration)
 
-
+func _process(delta):
+	if flying:
+		elapsed_time += delta
+	
+func signal_arrived(type):
+	if type == BTN_TYPE.action:
+		if not flying:
+			flying = true
+	elif type == BTN_TYPE.move_left:
+		print("received signal move left")
+		move_left()
+	elif type == BTN_TYPE.move_right:
+		print("received signal move right")
+		move_right()
 # DEBUG
 
 func _ready():
