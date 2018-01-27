@@ -20,7 +20,7 @@ panorama = ExtResource( 3 )
 
 background_mode = 2
 background_sky = SubResource( 2 )
-background_sky_custom_fov = 0.0
+background_sky_custom_fov = 47.9
 background_color = Color( 0, 0, 0, 1 )
 background_energy = 1.0
 background_canvas_max_layer = 0
@@ -129,7 +129,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96047e-07, 21.5, 40 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96048e-07, 21.5, 40 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null

@@ -18,6 +18,12 @@ func has_shield(): return $attributes/shield.value > 0
 func _ready():
 	$actions/turn.connect("finished", self, "check_track")
 
+enum BTN_TYPE {
+	action = 0,
+	move_left = 1,
+	move_right = 2
+}
+
 func damage():
 	if has_shield():
 		$attributes/shield.raw_value -= 1
@@ -53,12 +59,30 @@ func move_side():
 func mod_speed(speed_multiplier, duration):
 	$attributes/speed.add_percent_modifier(speed_multiplier, duration)
 
-
 func check_track():
 	if tracks.is_in_danger(track_number):
 		emit_signal("in_danger")
 	elif tracks.is_outside(track_number):
 		death()
+
+func _process(delta):
+	if flying:
+		elapsed_time += delta
+	
+func signal_arrived(type):
+	if type == BTN_TYPE.action:
+		if not flying:
+			flying = true
+	elif type == BTN_TYPE.move_left:
+		print("received signal move left")
+		move_left()
+	elif type == BTN_TYPE.move_right:
+		print("received signal move right")
+		move_right()
+# DEBUG
+
+func print_speed():
+	print(str($attributes/speed.value))
 
 # DEBUG
 func _input(event):
