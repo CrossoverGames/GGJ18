@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ship/ship.gd" type="Script" id=1]
 [ext_resource path="res://ship/attribute.gd" type="Script" id=2]
+[ext_resource path="res://ship/actions/move_timed.gd" type="Script" id=3]
+[ext_resource path="res://ship/actions/move.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -15,33 +17,19 @@ mid_height = 1.0
 radial_segments = 64
 rings = 8
 
-[node name="ship" type="RigidBody" index="0"]
+[node name="ship" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
 axis_lock_angular_x = true
 axis_lock_angular_y = false
 axis_lock_angular_z = false
-linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
-angular_velocity = Vector3( 0, 0, 0 )
-angular_damp = -1.0
+collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Linear" ]
 
@@ -69,12 +57,54 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="shield" type="Node" parent="." index="2"]
+[node name="attributes" type="Node" parent="." index="2"]
+
+[node name="shield" type="Node" parent="attributes" index="0"]
 
 script = ExtResource( 2 )
 max_path = NodePath("")
 min_path = NodePath("")
 must_be_positive = true
 raw_value = 4.0
+
+[node name="speed" type="Node" parent="attributes" index="1"]
+
+script = ExtResource( 2 )
+max_path = NodePath("")
+min_path = NodePath("")
+must_be_positive = true
+raw_value = 100.0
+
+[node name="actions" type="Node" parent="." index="3"]
+
+[node name="move_timed" type="Node" parent="actions" index="0"]
+
+script = ExtResource( 3 )
+disabled = false
+ship_path = NodePath("../..")
+speed_attribute = NodePath("../../attributes/speed")
+
+[node name="move" type="Node" parent="actions" index="1"]
+
+script = ExtResource( 4 )
+disabled = false
+ship_path = NodePath("../..")
+speed_attribute = NodePath("../../attributes/speed")
+
+[node name="Camera" type="Camera" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
 
 
