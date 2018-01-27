@@ -10,13 +10,13 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 [node name="ship" parent="." index="0" instance=ExtResource( 1 )]
 
 [node name="RemoteTransform" type="RemoteTransform" parent="ship" index="5"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.0492 )
 remote_path = NodePath("../../Camera")
 use_global_coordinates = true
 update_position = true
@@ -26,7 +26,7 @@ _sections_unfolded = [ "Transform", "Update" ]
 
 [node name="Camera" type="Camera" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 35.0492 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -59,23 +59,8 @@ material/0 = null
 
 [node name="Asteroid" parent="." index="3" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, 0 )
+transform = Transform( 0.796871, -0.604149, 0, 0.604149, 0.796871, 0, 0, 0, 1, 12.3935, 19.356, 0 )
 collision/safe_margin = 0.01
-
-[node name="Asteroid2" parent="." index="4" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0 )
-
-[node name="Asteroid4" parent="." index="5" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0 )
-
-[node name="Asteroid5" parent="." index="6" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, 0 )
-
-[node name="Asteroid3" parent="." index="7" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 14, 0 )
+direction = Vector3( -5, 0, 0 )
 
 
