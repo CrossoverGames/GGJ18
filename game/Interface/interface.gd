@@ -3,7 +3,10 @@ extends CanvasLayer
 enum BTN_TYPE {
 	action = 0,
 	move_left = 1,
-	move_right = 2
+	move_right = 2,
+	boost = 3,
+	brk = 4,
+	shield = 5
 }
 
 onready var launch_btn = get_node("actions/launch")
@@ -11,6 +14,9 @@ onready var separate_btn = get_node("actions/separate")
 onready var left_btn = get_node("left")
 onready var right_btn = get_node("right")
 onready var minimap = get_node("minimap")
+onready var boost_btn = get_node("boost")
+onready var break_btn = get_node("break")
+onready var shield_btn = get_node("shield")
 
 onready var separate_timer = get_node("actions/separate_on")
 
@@ -26,6 +32,9 @@ func _ready():
 	separate_btn.connect("pressed", self, "btn_pressed", [BTN_TYPE.action])
 	left_btn.connect("pressed", self, "btn_pressed", [BTN_TYPE.move_left])
 	right_btn.connect("pressed", self, "btn_pressed", [BTN_TYPE.move_right])
+	boost_btn.connect("pressed", self, "btn_pressed", [BTN_TYPE.boost])
+	break_btn.connect("pressed", self, "btn_pressed", [BTN_TYPE.brk])
+	shield_btn.connect("pressed", self, "btn_pressed", [BTN_TYPE.shield])
 	
 	separate_timer.connect("timeout", self, "activate_separate")
 	
