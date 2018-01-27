@@ -9,6 +9,6 @@ _sections_unfolded = [ "Transform" ]
 canvas_path = null
 rocket_path = null
 signal_path = "res://"
-softener = 0.2
+softener = 0.05
 
 

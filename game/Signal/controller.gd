@@ -30,7 +30,7 @@ func find_delay():
 	
 	if not tookoff:
 		tookoff = true
-		time = 1.0
+		time = 0.1
 	else:
 		time = rocket.elapsed_time * softener
 	
