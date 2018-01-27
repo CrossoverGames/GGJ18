@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ship/ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Interface/interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Signal/controller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tracks/tracks.gd" type="Script" id=4]
 
 [node name="test_controller" type="Node" index="0"]
 
@@ -15,7 +16,6 @@
 canvas_path = NodePath("../interface")
 rocket_path = NodePath("../ship")
 signal_path = "res://Signal/signal.tscn"
-softener = 0.2
 
 [node name="Camera" type="Camera" parent="." index="3"]
 
@@ -32,5 +32,12 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
+
+[node name="tracks" type="Spatial" parent="." index="4"]
+
+script = ExtResource( 4 )
+track_size = 5.0
+track_amount = 9
+danger_zone = 2
 
 

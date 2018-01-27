@@ -47,3 +47,5 @@ func create_signal(type):
 	
 	var delay = find_delay()
 	new_signal.set_arrive_timer_and_start(delay)
+	
+	canvas.add_signal_to_minimap(1 / delay)
