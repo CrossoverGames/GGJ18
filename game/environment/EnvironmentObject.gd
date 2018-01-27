@@ -9,4 +9,4 @@ func _ready():
 
 func _process(delta):
 	var speed = direction.y - ship.get_speed()
-	move_and_collide(Vector3(0, speed, 0))
+	move_and_collide(Vector3(0, speed, 0) * delta)

@@ -6,3 +6,4 @@ func _ready():
 func on_body_enter_area(body):
 	if body.is_in_group("ship"):
 		body.damage()
+		queue_free() # or play anim before freeing
