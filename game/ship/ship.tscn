@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ship/ship.gd" type="Script" id=1]
 [ext_resource path="res://ship/attribute.gd" type="Script" id=2]
-[ext_resource path="res://ship/actions/move_timed.gd" type="Script" id=3]
-[ext_resource path="res://ship/actions/move.gd" type="Script" id=4]
+[ext_resource path="res://ship/actions/move.gd" type="Script" id=3]
+[ext_resource path="res://ship/actions/turn.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -17,8 +17,47 @@ mid_height = 1.0
 radial_segments = 64
 rings = 8
 
-[node name="ship" type="KinematicBody" index="0"]
+[sub_resource type="Animation" id=3]
 
+resource_name = "tilt_left"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 20 ), Vector3( 0, 0, 20 ), Vector3( 0, 0, -10 ), Vector3( 0, 0, 1.70755e-06 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "tilt_right"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 1.70755e-06 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, 10 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="ship" type="KinematicBody"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -31,7 +70,8 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
-_sections_unfolded = [ "Linear" ]
+_sections_unfolded = [ "Linear", "Transform" ]
+track_distance = 5.0
 
 [node name="shape" type="CollisionShape" parent="." index="0"]
 
@@ -57,54 +97,50 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="attributes" type="Node" parent="." index="2"]
+[node name="anim" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 2.0
+anims/tilt_left = SubResource( 3 )
+anims/tilt_right = SubResource( 4 )
+blend_times = [  ]
+autoplay = ""
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="attributes" type="Node" parent="." index="3"]
 
 [node name="shield" type="Node" parent="attributes" index="0"]
 
 script = ExtResource( 2 )
-max_path = NodePath("")
-min_path = NodePath("")
+max_path = NodePath("max")
+min_path = NodePath("min")
 must_be_positive = true
 raw_value = 4.0
 
 [node name="speed" type="Node" parent="attributes" index="1"]
 
 script = ExtResource( 2 )
-max_path = NodePath("")
-min_path = NodePath("")
+max_path = NodePath("max")
+min_path = NodePath("min")
 must_be_positive = true
-raw_value = 100.0
+raw_value = 10.0
 
-[node name="actions" type="Node" parent="." index="3"]
+[node name="actions" type="Node" parent="." index="4"]
 
-[node name="move_timed" type="Node" parent="actions" index="0"]
+[node name="move" type="Node" parent="actions" index="0"]
 
 script = ExtResource( 3 )
-disabled = false
+disabled = true
 ship_path = NodePath("../..")
 speed_attribute = NodePath("../../attributes/speed")
 
-[node name="move" type="Node" parent="actions" index="1"]
+[node name="turn" type="Node" parent="actions" index="1"]
 
 script = ExtResource( 4 )
 disabled = false
 ship_path = NodePath("../..")
-speed_attribute = NodePath("../../attributes/speed")
-
-[node name="Camera" type="Camera" parent="." index="4"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = true
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
 
 
