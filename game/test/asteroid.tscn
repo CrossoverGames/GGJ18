@@ -10,7 +10,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Spatial" type="Spatial" index="0"]
+[node name="Spatial" type="Spatial"]
 
 [node name="ship" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -61,7 +61,6 @@ material/0 = null
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, 0 )
 collision/safe_margin = 0.01
-_sections_unfolded = [ "collision" ]
 
 [node name="Asteroid2" parent="." index="4" instance=ExtResource( 2 )]
 

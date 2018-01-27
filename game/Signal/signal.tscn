@@ -10,7 +10,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="signal" type="Spatial" index="0"]
+[node name="signal" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]

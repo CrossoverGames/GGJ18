@@ -26,6 +26,7 @@ func find_delay():
 	
 		
 func create_signal(type):
+	print("created signal type" + String(type))
 	new_signal = load(signal_path).instance()
 	add_child(new_signal)
 	new_signal.set_type(type)

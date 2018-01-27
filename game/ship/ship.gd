@@ -2,6 +2,8 @@ extends KinematicBody
 
 signal destroyed
 var dead = false
+var elapsed_time = 0.0
+var flying = false
 
 export var track_distance = 5.0
 
