@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Signal/controller.gd" type="Script" id=1]
+
+[node name="controller" type="Spatial" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+canvas_path = null
+rocket_path = null
+signal_path = "res://"
+
+
