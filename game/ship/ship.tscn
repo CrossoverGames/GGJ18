@@ -120,7 +120,7 @@ script = ExtResource( 2 )
 max_path = NodePath("max")
 min_path = NodePath("min")
 must_be_positive = true
-raw_value = 4.0
+raw_value = 1.0
 
 [node name="speed" type="Node" parent="attributes" index="1"]
 

@@ -18,10 +18,12 @@ is_hemisphere = false
 [node name="Asteroid" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "collision" ]
 
 [node name="shape" parent="." index="0"]
 
 shape = SubResource( 1 )
+disabled = true
 
 [node name="mesh" parent="." index="1"]
 

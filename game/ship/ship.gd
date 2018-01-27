@@ -18,6 +18,7 @@ func damage():
 func death():
 	dead = true
 	emit_signal("destroyed")
+	queue_free()
 
 func move_left():
 	if $anim.is_playing(): return

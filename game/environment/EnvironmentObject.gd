@@ -6,6 +6,7 @@ export var direction = Vector2()
 
 func _ready():
 	ship = get_tree().get_nodes_in_group("ship")[0]
+	ship.connect("destroyed", self, "set_process", [false])
 
 func _process(delta):
 	var speed = direction.y - ship.get_speed()
