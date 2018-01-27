@@ -1,11 +1,27 @@
 extends Spatial
 
 export(PackedScene) var asteroid_scene
+export(NodePath) var tracks_path = @"../tracks"
 export var rate = 1.0
 export var speed = 5.0
+export var start_active = true
+
+onready var tracks = get_node(tracks_path)
 
 func _ready():
+	if start_active: setup()
+
+func setup():
 	$cleaner.connect("area_entered", self, "enter_cleaner")
+	
+	var pos_count = tracks.track_amount
+	var it = -floor(pos_count * 0.5)
+	for i in range(pos_count):
+		var x = tracks.track_x(it + i)
+		var position = Position3D.new()
+		position.translation.x = x
+		position.name = "position-" + str(i)
+		$positions.add_child(position)
 	
 	var timer = Timer.new()
 	timer.autostart = true

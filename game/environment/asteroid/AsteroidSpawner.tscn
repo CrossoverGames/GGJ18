@@ -5,73 +5,31 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 38, 1, 55 )
+extents = Vector3( 75.4146, 1, 55 )
 
 [sub_resource type="BoxShape" id=2]
 
-extents = Vector3( 38, 1, 55 )
+extents = Vector3( 75.1837, 1, 55 )
 
 [sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 10, 1, 10 )
 
-[node name="AsteroidSpawner" type="Spatial" index="0"]
+[node name="AsteroidSpawner" type="Spatial"]
 
 script = ExtResource( 1 )
 asteroid_scene = ExtResource( 2 )
+tracks_path = NodePath("../tracks")
 rate = 1.0
 speed = 5.0
+start_active = true
 
 [node name="positions" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0 )
-
-[node name="position-1" type="Position3D" parent="positions" index="0"]
-
-[node name="position-2" type="Position3D" parent="positions" index="1"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-3" type="Position3D" parent="positions" index="2"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-4" type="Position3D" parent="positions" index="3"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-5" type="Position3D" parent="positions" index="4"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-6" type="Position3D" parent="positions" index="5"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-7" type="Position3D" parent="positions" index="6"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-8" type="Position3D" parent="positions" index="7"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="position-9" type="Position3D" parent="positions" index="8"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="cleaner" type="Area" parent="." index="1"]
 
-editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -95,21 +53,21 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="cleaner" index="0"]
 
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 50, -21, 0 )
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 50, -34, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="cleaner" index="1"]
 
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -50, -21, 0 )
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -50, -34, 0 )
 shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape3" type="CollisionShape" parent="cleaner" index="2"]
 
-transform = Transform( 6.6, 0, 0, 0, 1, 0, 0, 0, 6.6, 0, -60, 0 )
+transform = Transform( 6.6, 0, 0, 0, 1, 0, 0, 0, 6.6, 0, -111, 0 )
 shape = SubResource( 3 )
 disabled = false
 _sections_unfolded = [ "Transform" ]

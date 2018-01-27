@@ -1,7 +1,7 @@
 extends Node
 
 export(float) var track_size = 5.0
-export(int, 3, 25, 2) var track_amount = 9
+export(int, 3, 25) var track_amount = 11
 export(int, 25) var danger_zone = 2
 
 func track_x(n):

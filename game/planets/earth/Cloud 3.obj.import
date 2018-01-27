@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Cloud 3.obj-acee638718f6d75a1781c06df061b8bb.mesh"
+
+[deps]
+
+files=[ "res://.import/Cloud 3.obj-acee638718f6d75a1781c06df061b8bb.mesh" ]
+
+source_file="res://planets/earth/Cloud 3.obj"
+source_md5="5c413d83fef6d1d5d3831042d5394a82"
+
+dest_files=[ "res://.import/Cloud 3.obj-acee638718f6d75a1781c06df061b8bb.mesh", "res://.import/Cloud 3.obj-acee638718f6d75a1781c06df061b8bb.mesh" ]
+dest_md5="1957b9940e2c169b06fd4fbe4015fb31"
+
+[params]
+
+generate_tangents=true

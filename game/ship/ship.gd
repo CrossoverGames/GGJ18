@@ -6,6 +6,7 @@ signal in_danger
 var dead = false
 var elapsed_time = 0.0
 var flying = false
+var separated = false
 
 export(NodePath) var tracks_path = @"../tracks"
 onready var tracks = get_node(tracks_path)
@@ -68,11 +69,21 @@ func check_track():
 func _process(delta):
 	if flying:
 		elapsed_time += delta
+		
+func launch():
+	$attributes/speed.value = 10
 	
 func signal_arrived(type):
 	if type == BTN_TYPE.action:
 		if not flying:
 			flying = true
+			launch()
+			# particles, anim, etc
+		elif not separated:
+			separated = true
+			$rockets/anim.play("decouple")
+			yield($rockets/anim, "animation_finished")
+			$rockets.queue_free()
 	elif type == BTN_TYPE.move_left:
 		print("received signal move left")
 		move_left()

@@ -137,7 +137,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 1.70755e-06 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, -20 ), Vector3( 0, 0, 10 ), Vector3( 0, 0, 0 ) ]
 }
 
-[node name="ship" type="KinematicBody" index="0" groups=[
+[node name="ship" type="KinematicBody" groups=[
 "ship",
 ]]
 
@@ -228,8 +228,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="attributes" type="Node" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="shield" type="Node" parent="attributes" index="0"]
 
 script = ExtResource( 4 )
@@ -244,7 +242,7 @@ script = ExtResource( 4 )
 max_path = NodePath("max")
 min_path = NodePath("min")
 must_be_positive = true
-raw_value = 10.0
+raw_value = 0.0
 
 [node name="actions" type="Node" parent="." index="5"]
 
