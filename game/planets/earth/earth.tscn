@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=1]
 [ext_resource path="res://planets/earth/earth.DAE" type="PackedScene" id=2]
 [ext_resource path="res://planets/atmosphere_in.DAE" type="PackedScene" id=3]
-[ext_resource path="res://planets/earth/earth_atmosphereCompleteMap.png" type="Texture" id=4]
-[ext_resource path="res://planets/atmosphere.DAE" type="PackedScene" id=5]
+[ext_resource path="res://planets/atmosphere.DAE" type="PackedScene" id=4]
+[ext_resource path="res://planets/earth/earth_atmosphereCompleteMap_low_opacity.png" type="Texture" id=5]
 
 [sub_resource type="SphereShape" id=1]
 
 radius = 2.55462
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="StreamTexture" id=2]
+
+flags = 23
+load_path = "res://.import/earth_atmosphereCompleteMap.png-f2764fc8f3406936e464b95d55101499.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = true
@@ -34,7 +39,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 4 )
+albedo_texture = SubResource( 2 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -65,7 +70,62 @@ distance_fade_min_distance = 0.0
 distance_fade_max_distance = 5.0
 _sections_unfolded = [ "Albedo", "Distance Fade", "Flags", "Parameters" ]
 
-[node name="earth" type="KinematicBody"]
+[sub_resource type="SpatialMaterial" id=4]
+
+render_priority = 0
+flags_transparent = true
+flags_unshaded = true
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 4
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 5 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = true
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 5.0
+_sections_unfolded = [ "Albedo", "Distance Fade", "Flags", "Parameters" ]
+
+[node name="earth" type="KinematicBody" index="0"]
 
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 input_ray_pickable = true
@@ -101,10 +161,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="atmosphere" parent="atmosphere_in" index="0"]
 
-material/0 = SubResource( 2 )
+material/0 = SubResource( 3 )
 _sections_unfolded = [ "material" ]
 
-[node name="atmosphere" parent="." index="3" instance=ExtResource( 5 )]
+[node name="atmosphere" parent="." index="3" instance=ExtResource( 4 )]
 
 transform = Transform( 1.09903, 0, 0, 0, 1.09903, 0, 0, 0, 1.09903, 0.0226707, 0.337527, 0.340249 )
 _sections_unfolded = [ "Transform" ]
@@ -113,7 +173,7 @@ _sections_unfolded = [ "Transform" ]
 
 cast_shadow = 0
 use_in_baked_light = false
-material/0 = SubResource( 2 )
+material/0 = SubResource( 4 )
 _sections_unfolded = [ "Geometry", "material" ]
 
 

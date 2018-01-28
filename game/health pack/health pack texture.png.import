@@ -1,0 +1,33 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/health pack texture.png-6b95491ba64381b3a09c4c6813e1874b.s3tc.stex"
+path.etc2="res://.import/health pack texture.png-6b95491ba64381b3a09c4c6813e1874b.etc2.stex"
+
+[deps]
+
+source_file="res://health pack/health pack texture.png"
+source_md5="b9c7b03d9776a0c4c63832d0f6707fb6"
+
+dest_files=[ "res://.import/health pack texture.png-6b95491ba64381b3a09c4c6813e1874b.s3tc.stex", "res://.import/health pack texture.png-6b95491ba64381b3a09c4c6813e1874b.etc2.stex" ]
+dest_md5="d4c8ec99a564907c2248e8c8d93b191b"
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
