@@ -2,6 +2,7 @@ extends KinematicBody
 
 signal destroyed
 signal in_danger
+signal separated
 
 var dead = false
 var elapsed_time = 0.0
@@ -75,6 +76,7 @@ func _process(delta):
 		
 func launch():
 	$attributes/speed.value = 10
+	$rockets/Particles.emitting = true
 	
 func signal_arrived(type):
 	if type == BTN_TYPE.action:
@@ -86,8 +88,13 @@ func signal_arrived(type):
 			separated = true
 			$rockets/anim.play("decouple")
 			yield($rockets/anim, "animation_finished")
+			emit_signal("separated")
+			$rockets/Particles.emitting = false
 			$rockets.queue_free()
-	elif type == BTN_TYPE.move_left:
+	
+	if not separated: return
+	
+	if type == BTN_TYPE.move_left:
 		print("received signal move left")
 		move_left()
 	elif type == BTN_TYPE.move_right:

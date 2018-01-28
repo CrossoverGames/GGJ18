@@ -7,10 +7,10 @@ path="res://.import/earth.DAE-c0428ad0dae19b97e57dea2eaf6c4c68.scn"
 [deps]
 
 source_file="res://planets/earth/earth.DAE"
-source_md5="9672365eaa310a89c388eeed18c589ba"
+source_md5="02522fbced6c995e0273c125b9e1fe15"
 
 dest_files=[ "res://.import/earth.DAE-c0428ad0dae19b97e57dea2eaf6c4c68.scn" ]
-dest_md5="28af5d4c554caf581e72ad0d8df9847a"
+dest_md5="38cf8530ebae3d523731e690e49e011d"
 
 [params]
 

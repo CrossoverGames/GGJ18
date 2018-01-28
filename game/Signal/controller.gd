@@ -48,7 +48,12 @@ func create_signal(type):
 	new_signal.set_type(type)
 	new_signal.ship = rocket
 	
-	var delay = find_delay()
+	var delay = find_delay() + 0.001
 	new_signal.set_arrive_timer_and_start(delay)
 	
 	canvas.add_signal_to_minimap(1 / delay)
+
+func on_ship_destroyed():
+	get_tree().reload_current_scene()
+	#for sig in get_children(): sig.ship = null
+	

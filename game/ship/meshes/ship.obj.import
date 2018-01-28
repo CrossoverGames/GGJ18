@@ -9,10 +9,10 @@ path="res://.import/ship.obj-7344897e7ac1a1407f3e1a2fe7a8655c.mesh"
 files=[ "res://.import/ship.obj-7344897e7ac1a1407f3e1a2fe7a8655c.mesh" ]
 
 source_file="res://ship/meshes/ship.obj"
-source_md5="4ef5eee1ac7a495a681e45db95611be5"
+source_md5="e060fda4d62016d31e2134abacb05961"
 
 dest_files=[ "res://.import/ship.obj-7344897e7ac1a1407f3e1a2fe7a8655c.mesh", "res://.import/ship.obj-7344897e7ac1a1407f3e1a2fe7a8655c.mesh" ]
-dest_md5="8ad73a2dde41dd4fdfb92c9370c4a684"
+dest_md5="5438497819253cf4470c8616bd455f6d"
 
 [params]
 
