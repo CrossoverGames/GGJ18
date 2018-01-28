@@ -14,6 +14,11 @@ config/name="GGJ18"
 run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [physics]
 
 3d/default_gravity_vector=Vector3( 0, 0, 0 )

@@ -2,6 +2,7 @@ extends Spatial
 
 export(float) var chance = 0.001
 export(NodePath) var ship_path
+export(NodePath) var ui_path
 export(int) var alert_time = 2
 export(float) var duration = 15.0
 
@@ -31,7 +32,8 @@ func _process(delta):
 	
 	if rnd < chance and not active and ship.separated:
 		active = true
-		alert.show()
+		#alert.show()
+		get_node(ui_path).print_message("Solar storm incoming!\nUse your shield!", 3.0)
 		incoming_timer.wait_time = alert_time
 		incoming_timer.start()
 		emit_signal("solar_storm_incoming")

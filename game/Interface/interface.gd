@@ -68,3 +68,9 @@ func btn_pressed(type):
 	
 func add_signal_to_minimap(speed):
 	minimap.create_signal(speed)
+
+func print_message(message, duration = 0):
+	$"actions/text-box/label".text = message
+	if duration > 0:
+		yield(get_tree().create_timer(duration), "timeout")
+		$"actions/text-box/label".text = ""

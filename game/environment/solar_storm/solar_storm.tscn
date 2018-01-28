@@ -41,7 +41,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
 flags_transparent = false
@@ -97,9 +97,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Emission", "Metallic", "Parameters" ]
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="SphereMesh" id=3]
 
-material = SubResource( 3 )
+material = SubResource( 2 )
 radius = 1.0
 height = 2.0
 radial_segments = 64
@@ -120,6 +120,7 @@ visible = false
 script = ExtResource( 1 )
 chance = 0.001
 ship_path = null
+ui_path = null
 alert_time = 2
 duration = 15.0
 
@@ -150,7 +151,7 @@ local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
-draw_pass_1 = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
 
 [node name="Particles3" type="Particles" parent="." index="1"]
@@ -180,7 +181,7 @@ local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
-draw_pass_1 = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
 
 [node name="Particles5" type="Particles" parent="." index="2"]
@@ -210,7 +211,7 @@ local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
-draw_pass_1 = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
 
 [node name="Particles2" type="Particles" parent="." index="3"]
@@ -240,7 +241,7 @@ local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
-draw_pass_1 = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
 
 [node name="Particles4" type="Particles" parent="." index="4"]
@@ -270,7 +271,7 @@ local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
-draw_pass_1 = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
 
 [node name="incoming" type="Timer" parent="." index="5"]
