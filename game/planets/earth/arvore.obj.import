@@ -9,10 +9,10 @@ path="res://.import/arvore.obj-9d61d06e9bfd05ce96d8754f8610cb62.mesh"
 files=[ "res://.import/arvore.obj-9d61d06e9bfd05ce96d8754f8610cb62.mesh" ]
 
 source_file="res://planets/earth/arvore.obj"
-source_md5="f91c107a28db4f970d4a43ac5cade086"
+source_md5="1daeb9761de629bbd7633205f24b0654"
 
 dest_files=[ "res://.import/arvore.obj-9d61d06e9bfd05ce96d8754f8610cb62.mesh", "res://.import/arvore.obj-9d61d06e9bfd05ce96d8754f8610cb62.mesh" ]
-dest_md5="e579078befd738ae0a56f57ccf3ce5f2"
+dest_md5="655f865eaab3e98017dc0a080699f60e"
 
 [params]
 

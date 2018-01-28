@@ -7,10 +7,10 @@ path="res://.import/player.DAE-d42476c99ae78427be76a62c376f1fa4.scn"
 [deps]
 
 source_file="res://ship/meshes/player.DAE"
-source_md5="a193d65081ad0242b9447e66d6863c04"
+source_md5="3f559f208a840abda059c3cf0b7dfb7a"
 
 dest_files=[ "res://.import/player.DAE-d42476c99ae78427be76a62c376f1fa4.scn" ]
-dest_md5="842c1fb5f4d3d46b5d391259446cde12"
+dest_md5="de78e8653a89210db868c662e8dab22e"
 
 [params]
 
