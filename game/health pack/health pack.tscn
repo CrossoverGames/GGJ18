@@ -7,7 +7,7 @@
 
 [sub_resource type="SphereShape" id=1]
 
-radius = 0.161004
+radius = 0.734882
 
 [sub_resource type="ArrayMesh" id=2]
 
@@ -87,8 +87,8 @@ _sections_unfolded = [ "Emission", "Flags", "Metallic", "Parameters" ]
 
 [sub_resource type="CapsuleShape" id=4]
 
-radius = 0.338919
-height = 0.505297
+radius = 4.36092
+height = 5.22408
 
 [node name="HealthPack" type="KinematicBody" index="0" groups=[
 "obstacle",
@@ -106,16 +106,20 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
+active = true
+delay_time = 0
+direction = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.590585, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.28709, -9.28079e-07 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 [node name="Capsule001" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0.0218466, 0, -0.019547 )
+transform = Transform( 9.00227, 0, 0, 0, 0, 9.00227, 0, -9.00227, 0, 0.0218466, 0, -0.019547 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -128,11 +132,11 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 3 )
-_sections_unfolded = [ "material" ]
+_sections_unfolded = [ "Transform", "material" ]
 
 [node name="Area" type="Area" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661206, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.55692, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0

@@ -3,7 +3,7 @@ extends Spatial
 export(float) var chance = 0.001
 export(NodePath) var ship_path
 export(NodePath) var ui_path
-export(int) var alert_time = 2
+export(int) var alert_time = 5
 export(float) var duration = 15.0
 
 onready var incoming_timer = get_node("incoming")
