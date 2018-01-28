@@ -18,7 +18,7 @@ onready var tracks = get_node(tracks_path)
 export(NodePath) var storm_path = @"../solar_storm"
 onready var storm = get_node(storm_path)
 
-export(float) var shield_duration = 15.0
+export(float) var shield_duration = 20.0
 onready var shield_timer = get_node("shield/timer")
 
 onready var shield = get_node("shield")

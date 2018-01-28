@@ -13,18 +13,18 @@
 radius = 0.818994
 height = 6.51287
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=2]
 
 offsets = PoolRealArray( 0.573964, 0.994083 )
 colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=2]
+[sub_resource type="GradientTexture" id=3]
 
 flags = 4
-gradient = SubResource( 4 )
+gradient = SubResource( 2 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
 trail_divisor = 1
@@ -51,7 +51,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.1
 scale_random = 0.0
-color_ramp = SubResource( 2 )
+color_ramp = SubResource( 3 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -61,7 +61,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Scale" ]
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 
 render_priority = 0
 flags_transparent = false
@@ -112,7 +112,7 @@ uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 5
@@ -149,7 +149,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Animation", "Color", "Hue Variation", "Initial Velocity", "Linear Accel", "Scale", "Trail" ]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
@@ -167,7 +167,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 20 ), Vector3( 0, 0, 20 ), Vector3( 0, 0, 1.70755e-06 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 
 length = 1.0
 loop = false
@@ -203,7 +203,10 @@ axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Linear", "Transform" ]
+ui_path = NodePath("../interface")
 tracks_path = NodePath("../tracks")
+storm_path = NodePath("../solar_storm")
+shield_duration = 20.0
 
 [node name="shape" type="CollisionShape" parent="." index="0"]
 
@@ -219,9 +222,10 @@ transform = Transform( 10.8391, 0, 0, 0, 10.8391, 0, 0, 0, 10.8391, 0.294789, 0,
 [node name="Particles" type="Particles" parent="mesh" index="2"]
 
 transform = Transform( 0.0394208, 0, 6.93889e-18, -1.11022e-16, 0.0392708, 0.00343575, 0, -0.00343575, 0.0392708, -0.031704, -0.182923, 0.357197 )
+visible = false
 layers = 1
 material_override = null
-cast_shadow = 1
+cast_shadow = 0
 extra_cull_margin = 0.0
 use_in_baked_light = false
 lod_min_distance = 0.0
@@ -241,17 +245,18 @@ fract_delta = true
 visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 3 )
+process_material = SubResource( 4 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Draw Passes", "Geometry", "Process Material", "Transform" ]
 
 [node name="Particles2" type="Particles" parent="mesh" index="3"]
 
 transform = Transform( -1.72314e-09, -0.00343575, 0.0392708, 6.61744e-24, 0.0392708, 0.00343575, -0.0394208, 1.50181e-10, -1.71658e-09, -0.031704, -0.182923, 0.357197 )
+visible = false
 layers = 1
 material_override = null
-cast_shadow = 1
+cast_shadow = 0
 extra_cull_margin = 0.0
 use_in_baked_light = false
 lod_min_distance = 0.0
@@ -271,7 +276,7 @@ fract_delta = true
 visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 3 )
+process_material = SubResource( 4 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -279,9 +284,10 @@ _sections_unfolded = [ "Transform" ]
 [node name="Particles3" type="Particles" parent="mesh" index="4"]
 
 transform = Transform( -0.0394208, 3.00363e-10, -3.43316e-09, 1.11022e-16, 0.0392708, 0.00343575, 3.44628e-09, 0.00343575, -0.0392708, -0.031704, -0.182923, 0.357197 )
+visible = false
 layers = 1
 material_override = null
-cast_shadow = 1
+cast_shadow = 0
 extra_cull_margin = 0.0
 use_in_baked_light = false
 lod_min_distance = 0.0
@@ -301,7 +307,7 @@ fract_delta = true
 visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 3 )
+process_material = SubResource( 4 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -309,9 +315,10 @@ _sections_unfolded = [ "Transform" ]
 [node name="Particles4" type="Particles" parent="mesh" index="5"]
 
 transform = Transform( 4.70088e-10, 0.00343575, -0.0392708, 0, 0.0392708, 0.00343575, 0.0394208, -4.09709e-11, 4.683e-10, -0.031704, -0.182923, 0.357197 )
+visible = false
 layers = 1
 material_override = null
-cast_shadow = 1
+cast_shadow = 0
 extra_cull_margin = 0.0
 use_in_baked_light = false
 lod_min_distance = 0.0
@@ -331,7 +338,7 @@ fract_delta = true
 visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 3 )
+process_material = SubResource( 4 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -340,7 +347,7 @@ _sections_unfolded = [ "Transform" ]
 
 transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 9.48575e-13, -40, -2.62268e-06 )
 layers = 1
-material_override = SubResource( 6 )
+material_override = SubResource( 5 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = true
@@ -361,7 +368,7 @@ fract_delta = true
 visibility_aabb = AABB( -4, -4, 300, 8, 8, 80 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 7 )
+process_material = SubResource( 6 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 3 )
 _sections_unfolded = [ "Draw Passes", "Drawing", "Geometry", "LOD", "Process Material", "Time", "Transform", "Visibility" ]
@@ -373,8 +380,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 3.0
-anims/tilt_left = SubResource( 8 )
-anims/tilt_right = SubResource( 5 )
+anims/tilt_left = SubResource( 7 )
+anims/tilt_right = SubResource( 8 )
 blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "Playback Options" ]
@@ -419,5 +426,28 @@ disabled = false
 ship_path = NodePath("../..")
 signal_particle_path = NodePath("../../signal_particle")
 signal_speed = 10
+
+[node name="OmniLight" type="OmniLight" parent="." index="6"]
+
+transform = Transform( 1, -1.75092e-08, 0, -1.75092e-08, 0.412492, 0, 0, 0, 1, -8.47222e-08, -2.8428, 0 )
+layers = 1
+light_color = Color( 1, 0.65625, 0, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 100.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni" ]
 
 
