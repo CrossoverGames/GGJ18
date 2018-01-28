@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/earth.DAE-c0428ad0dae19b97e57dea2eaf6c4c68.scn"
+path="res://.import/probe.dae-bedd212b2bec18f1d5d10242dd640f57.scn"
 
 [deps]
 
-source_file="res://planets/earth/earth.DAE"
-source_md5="02522fbced6c995e0273c125b9e1fe15"
+source_file="res://environment/sattelite/probe.dae"
+source_md5="5f04a08461ee07e3433140cafd212667"
 
-dest_files=[ "res://.import/earth.DAE-c0428ad0dae19b97e57dea2eaf6c4c68.scn" ]
-dest_md5="38cf8530ebae3d523731e690e49e011d"
+dest_files=[ "res://.import/probe.dae-bedd212b2bec18f1d5d10242dd640f57.scn" ]
+dest_md5="10cfee86e7374e6b85548a429e50b3b3"
 
 [params]
 

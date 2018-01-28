@@ -10,7 +10,7 @@ source_file="res://ship/meshes/rockets_and_animation.dae"
 source_md5="beb6d0f2b61940a49520dd8c33e0cb50"
 
 dest_files=[ "res://.import/rockets_and_animation.dae-6f59c3de04014980219f2f7355ef8f9d.scn" ]
-dest_md5="8232d6083efbf1781d861e8b837de46c"
+dest_md5="5ba928a41f6174eb10f410ebe46d983e"
 
 [params]
 
