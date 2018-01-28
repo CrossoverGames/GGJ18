@@ -294,8 +294,8 @@ transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 2000, 0 )
 
 [connection signal="in_danger" from="ship" to="DangerZoneWarning" method="appear"]
 
-[connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
-
 [connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
+
+[connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
 
 

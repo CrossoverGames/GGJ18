@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ship/meshes/barrier.DAE" type="PackedScene" id=1]
-[ext_resource path="res://ship/meshes/Material #47.material" type="Material" id=2]
-[ext_resource path="res://ship/meshes/shield_texture.png" type="Texture" id=3]
+[ext_resource path="res://ship/shield.gd" type="Script" id=2]
+[ext_resource path="res://ship/meshes/Material #47.material" type="Material" id=3]
+[ext_resource path="res://ship/meshes/shield_texture.png" type="Texture" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -16,7 +17,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 98103,
 "index_count": 1152,
-"material": ExtResource( 2 ),
+"material": ExtResource( 3 ),
 "name": "Material #47",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -47,7 +48,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 3 )
+albedo_texture = ExtResource( 4 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -58,7 +59,7 @@ emission = Color( 0.136963, 0.34375, 0.142196, 1 )
 emission_energy = 1.5
 emission_operator = 0
 emission_on_uv2 = false
-emission_texture = ExtResource( 3 )
+emission_texture = ExtResource( 4 )
 normal_enabled = false
 rim_enabled = false
 clearcoat_enabled = false
@@ -83,7 +84,7 @@ _sections_unfolded = [ "Emission" ]
 
 [node name="shield" instance=ExtResource( 1 )]
 
-visible = false
+script = ExtResource( 2 )
 
 [node name="Sphere001" parent="." index="0"]
 
