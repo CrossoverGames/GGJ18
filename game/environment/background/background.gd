@@ -1,6 +1,6 @@
 extends Node
 
-export(int) var draw_chance = 3
+export(float) var draw_chance = 3.0
 
 var moon1 = preload("res://environment/background/moon1.tscn")
 var moon2 = preload("res://environment/background/moon2.tscn")
@@ -25,12 +25,12 @@ func delete_body(body):
 		print("deleted back obj")
 
 func _process(delta):
-	var chance = randi()%100
+	var chance = randf() * 100
 	
 	var wr = weakref(ship)
 	if not wr.get_ref(): return
 	
-	if (chance > (100 - draw_chance)) and ship.flying:
+	if (chance > (100.0 - draw_chance)) and ship.flying:
 		var rnd = randi()%4
 		var x_rnd = (randi()%200 - 100)
 		var z_rnd = (randi()%30 - 35)

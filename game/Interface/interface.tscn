@@ -23,7 +23,7 @@
 [ext_resource path="res://Interface/minimap.gd" type="Script" id=21]
 [ext_resource path="res://Interface/signal/signal.tscn" type="PackedScene" id=22]
 
-[node name="interface" type="CanvasLayer" index="0"]
+[node name="interface" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -246,7 +246,6 @@ time = 2.0
 
 [node name="minimap" type="TextureRect" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
