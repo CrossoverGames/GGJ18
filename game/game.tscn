@@ -11,7 +11,7 @@
 [ext_resource path="res://environment/sattelite/Sattelite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=10]
 [ext_resource path="res://planets/earth/Launch base + animation.dae" type="PackedScene" id=11]
-[ext_resource path="res://environment/sky/space-2.jpg" type="Texture" id=12]
+[ext_resource path="res://environment/sky/equirectangular.png" type="Texture" id=12]
 [ext_resource path="res://environment/background/background.tscn" type="PackedScene" id=13]
 [ext_resource path="res://environment/solar_storm/solar_storm.tscn" type="PackedScene" id=14]
 [ext_resource path="res://end/end.tscn" type="PackedScene" id=15]

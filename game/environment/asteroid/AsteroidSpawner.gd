@@ -7,6 +7,7 @@ export var speed = 5.0
 export var start_active = true
 
 onready var tracks = get_node(tracks_path)
+var timer
 
 func _ready():
 	if start_active: setup()
@@ -23,7 +24,7 @@ func setup():
 		position.name = "position-" + str(i)
 		$positions.add_child(position)
 	
-	var timer = Timer.new()
+	timer = Timer.new()
 	timer.autostart = true
 	timer.one_shot = false
 	timer.wait_time = rate
@@ -42,3 +43,7 @@ func spawn_asteroid():
 func enter_cleaner(body):
 	if body.is_in_group("obstacle"):
 		body.queue_free()
+
+func stop_spawning():
+	if timer:
+		timer.stop()

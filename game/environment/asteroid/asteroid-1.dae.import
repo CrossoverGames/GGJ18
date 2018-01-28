@@ -7,7 +7,7 @@ path="res://.import/asteroid-1.dae-831373db7353aa057829a404fd6a676f.scn"
 [deps]
 
 source_file="res://environment/asteroid/asteroid-1.dae"
-source_md5="fe6356707309831431ec7a7c177e3228"
+source_md5="32ddc7c4fa09de4e56ef357aae4aab11"
 
 dest_files=[ "res://.import/asteroid-1.dae-831373db7353aa057829a404fd6a676f.scn" ]
 dest_md5="6fb20864099c5f47a2fc67b6dd49bc7d"
