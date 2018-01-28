@@ -7,7 +7,7 @@ path="res://.import/atmosphere_in.DAE-762ee39d4c8def9c38ab5f7d043c656f.scn"
 [deps]
 
 source_file="res://planets/atmosphere_in.DAE"
-source_md5="8ccb6dd44bc156ac34d9e3e730e101a1"
+source_md5="49c32e67a624430530a5476d5184b450"
 
 dest_files=[ "res://.import/atmosphere_in.DAE-762ee39d4c8def9c38ab5f7d043c656f.scn" ]
 dest_md5="c45bdf6d375f8b0308d4f9b156755fa0"

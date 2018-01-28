@@ -144,11 +144,9 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background" ]
 
-[node name="game" type="Node"]
+[node name="game" type="Node" index="0"]
 
 [node name="interface" parent="." index="0" instance=ExtResource( 1 )]
-
-storm_time = 20
 
 [node name="DangerZoneWarning" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -253,7 +251,7 @@ environment = SubResource( 4 )
 
 [node name="background" parent="." index="12" instance=ExtResource( 13 )]
 
-draw_chance = 2.0
+draw_chance = 0.5
 ship_path = NodePath("../ship")
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="13"]
@@ -305,8 +303,8 @@ bus = "Master"
 
 [connection signal="in_danger" from="ship" to="DangerZoneWarning" method="appear"]
 
-[connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
-
 [connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
+
+[connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
 
 
