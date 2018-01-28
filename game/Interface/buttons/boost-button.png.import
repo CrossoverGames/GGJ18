@@ -7,10 +7,10 @@ path="res://.import/boost-button.png-8644d726bf8cdbe638666546f19b7823.stex"
 [deps]
 
 source_file="res://Interface/buttons/boost-button.png"
-source_md5="8a9ce10eed008662012eb79f166a8af1"
+source_md5="58af500c67598c0c1b258820d7f43111"
 
 dest_files=[ "res://.import/boost-button.png-8644d726bf8cdbe638666546f19b7823.stex" ]
-dest_md5="3cbe48cd694b2afd607904352995f7c8"
+dest_md5="6442745d8aebaf1ecab990227fa4606b"
 
 [params]
 

@@ -7,10 +7,10 @@ path="res://.import/right-arrow.png-e91353af30036e8dba906ee890032e77.stex"
 [deps]
 
 source_file="res://Interface/buttons/right-arrow.png"
-source_md5="db46156e36e529b0498b42ecf6c68660"
+source_md5="7d5c992fbf0b1ab5491a59af9bd2eaab"
 
 dest_files=[ "res://.import/right-arrow.png-e91353af30036e8dba906ee890032e77.stex" ]
-dest_md5="c0bb667da959ed2b40181535fb200bfd"
+dest_md5="ecce6bfc593b4089e019498fd3eccd22"
 
 [params]
 

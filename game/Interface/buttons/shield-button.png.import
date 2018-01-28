@@ -7,10 +7,10 @@ path="res://.import/shield-button.png-3bb05dc947f31b33da6fcf4ff08fb0be.stex"
 [deps]
 
 source_file="res://Interface/buttons/shield-button.png"
-source_md5="b265e9ce7265a7c1f4c6a5c950078ab8"
+source_md5="fcb86e420f699b5dc3ed6a919073deb2"
 
 dest_files=[ "res://.import/shield-button.png-3bb05dc947f31b33da6fcf4ff08fb0be.stex" ]
-dest_md5="5a82dd457d7aa3e384b53831f4efc375"
+dest_md5="4af43bda002c9ede4202454603dcd680"
 
 [params]
 

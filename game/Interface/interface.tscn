@@ -19,11 +19,11 @@
 [ext_resource path="res://Interface/buttons/shield-button.png" type="Texture" id=17]
 [ext_resource path="res://Interface/buttons/shield-button-pressed.png" type="Texture" id=18]
 [ext_resource path="res://Interface/buttons/shield-button-pressed-darker.png" type="Texture" id=19]
-[ext_resource path="res://Interface/signal/signal-monitor.png" type="Texture" id=20]
+[ext_resource path="res://Interface/signal/signal-display.png" type="Texture" id=20]
 [ext_resource path="res://Interface/minimap.gd" type="Script" id=21]
 [ext_resource path="res://Interface/signal/signal.tscn" type="PackedScene" id=22]
 
-[node name="interface" type="CanvasLayer"]
+[node name="interface" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -262,6 +262,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 20 )
+expand = true
 stretch_mode = 0
 script = ExtResource( 21 )
 _sections_unfolded = [ "Anchor", "Rect" ]

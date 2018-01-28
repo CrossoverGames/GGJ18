@@ -7,10 +7,10 @@ path="res://.import/signal-icon.png-752ecc9d13fd908ac51d6da48e8ca1c0.stex"
 [deps]
 
 source_file="res://Interface/signal/signal-icon.png"
-source_md5="64c44184493ae11ea5134b9de3681b55"
+source_md5="96fe917a2a75efddf1b2282ac99b8193"
 
 dest_files=[ "res://.import/signal-icon.png-752ecc9d13fd908ac51d6da48e8ca1c0.stex" ]
-dest_md5="9b52b5afd1074bee5fc50f3938d59095"
+dest_md5="30c098fd566efaa0d6f19f9659c4d5c7"
 
 [params]
 

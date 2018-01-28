@@ -7,10 +7,10 @@ path="res://.import/shield-button-pressed-darker.png-db3ebb7e67d6671bc2135b704ab
 [deps]
 
 source_file="res://Interface/buttons/shield-button-pressed-darker.png"
-source_md5="9f2883ec9681514d43a7c3c666fc25c4"
+source_md5="d44d4f9410f0e3b3d86737fd29b57002"
 
 dest_files=[ "res://.import/shield-button-pressed-darker.png-db3ebb7e67d6671bc2135b704ab614b8.stex" ]
-dest_md5="a95aa98fde0374d1c4c13b55c3c530f9"
+dest_md5="2e0ddc3128ac63bbb2251bb553eb79b6"
 
 [params]
 

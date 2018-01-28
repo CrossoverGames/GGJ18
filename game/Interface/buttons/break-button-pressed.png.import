@@ -7,10 +7,10 @@ path="res://.import/break-button-pressed.png-59603c7cc477f3667fa35979281910ee.st
 [deps]
 
 source_file="res://Interface/buttons/break-button-pressed.png"
-source_md5="fe57ba5e3b1d04e54ab73e41f2377d08"
+source_md5="b73aabad7a7d0e547d3ba8926318ce1a"
 
 dest_files=[ "res://.import/break-button-pressed.png-59603c7cc477f3667fa35979281910ee.stex" ]
-dest_md5="a0c82e9bfb10732c8b9b60094075b99f"
+dest_md5="3d92f5c053b7ca049211e77ae6a3d7e8"
 
 [params]
 

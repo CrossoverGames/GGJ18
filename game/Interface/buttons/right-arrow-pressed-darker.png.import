@@ -7,10 +7,10 @@ path="res://.import/right-arrow-pressed-darker.png-5d39ec5e8d303881b6d5e9a8db51c
 [deps]
 
 source_file="res://Interface/buttons/right-arrow-pressed-darker.png"
-source_md5="4bfd682a99b55f0e8ee8f3c28cf7bfde"
+source_md5="db7028bc87a536c71ddc6acbe604b6e7"
 
 dest_files=[ "res://.import/right-arrow-pressed-darker.png-5d39ec5e8d303881b6d5e9a8db51c22c.stex" ]
-dest_md5="93f077e53f89617dee98bbc242865a51"
+dest_md5="c7032508a5093ed88afc658eaeee80a9"
 
 [params]
 

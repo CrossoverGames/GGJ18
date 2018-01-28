@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/signal-monitor.png-64f672467de28871149848f6b44a469a.stex"
+path="res://.import/signal-display.png-e0cf47394b61f250e58dc5c3dafe217e.stex"
 
 [deps]
 
-source_file="res://Interface/signal/signal-monitor.png"
-source_md5="865a02806faae3c33a7aeb03524fe666"
+source_file="res://Interface/signal/signal-display.png"
+source_md5="31859b5397eda0cfbd5ec1714cc51fc7"
 
-dest_files=[ "res://.import/signal-monitor.png-64f672467de28871149848f6b44a469a.stex" ]
-dest_md5="5f3510e4cb8222bbc2faf9479f944b2a"
+dest_files=[ "res://.import/signal-display.png-e0cf47394b61f250e58dc5c3dafe217e.stex" ]
+dest_md5="707da0cfae7d0a0dacbebff583953162"
 
 [params]
 

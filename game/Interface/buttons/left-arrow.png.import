@@ -7,10 +7,10 @@ path="res://.import/left-arrow.png-1317503adb97811e5034e16994aa1a44.stex"
 [deps]
 
 source_file="res://Interface/buttons/left-arrow.png"
-source_md5="eea533ec82707c7ad255044b91d579b2"
+source_md5="e54ad0e13381f9c014bd5d235bebaeb9"
 
 dest_files=[ "res://.import/left-arrow.png-1317503adb97811e5034e16994aa1a44.stex" ]
-dest_md5="da07e56940307cf4044bff1e3155a0a2"
+dest_md5="b7accbb26b49f68ca191bb5c2d6caf64"
 
 [params]
 
