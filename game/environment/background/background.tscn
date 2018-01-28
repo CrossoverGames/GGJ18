@@ -11,7 +11,7 @@ extents = Vector3( 161.632, 1, 56.1928 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-draw_chance = 3
+draw_chance = 3.0
 ship_path = null
 
 [node name="Area" type="Area" parent="." index="0"]

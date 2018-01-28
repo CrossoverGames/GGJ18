@@ -7,10 +7,10 @@ path="res://.import/probe.dae-bedd212b2bec18f1d5d10242dd640f57.scn"
 [deps]
 
 source_file="res://environment/sattelite/probe.dae"
-source_md5="5f04a08461ee07e3433140cafd212667"
+source_md5="8535c883fdf5437324be6219599facbd"
 
 dest_files=[ "res://.import/probe.dae-bedd212b2bec18f1d5d10242dd640f57.scn" ]
-dest_md5="10cfee86e7374e6b85548a429e50b3b3"
+dest_md5="d37016b7217a30b85baf5685a40b063f"
 
 [params]
 

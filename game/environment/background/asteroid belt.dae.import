@@ -7,10 +7,10 @@ path="res://.import/asteroid belt.dae-e7c2e2f5a9dcc25159bcc589340eb7b9.scn"
 [deps]
 
 source_file="res://environment/background/asteroid belt.dae"
-source_md5="0eebe8f6e108f970c9f8db2f98093246"
+source_md5="97183c0709c709ba6f15385f7aba294b"
 
 dest_files=[ "res://.import/asteroid belt.dae-e7c2e2f5a9dcc25159bcc589340eb7b9.scn" ]
-dest_md5="ec9b22f733e4e4a3dbd8af73f791a1b4"
+dest_md5="ab811e1ca58552ad22772245ae6365d6"
 
 [params]
 

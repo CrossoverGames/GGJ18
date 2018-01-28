@@ -21,6 +21,7 @@ onready var shield_btn = get_node("shield")
 onready var separate_timer = get_node("actions/separate_on")
 
 export(float) var separate_time = 10
+export(float) var storm_time = 20
 
 signal btn_pressed
 
@@ -39,6 +40,13 @@ func _ready():
 	separate_timer.connect("timeout", self, "activate_separate")
 	
 	separate_timer.wait_time = separate_time
+	
+func storm_affected():
+	left_btn.cooldown_with_time(storm_time)
+	right_btn.cooldown_with_time(storm_time)
+	boost_btn.cooldown_with_time(storm_time)
+	break_btn.cooldown_with_time(storm_time)
+	shield_btn.cooldown_with_time(storm_time)
 	
 func activate_separate():
 	separate_btn.show()

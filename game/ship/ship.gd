@@ -61,6 +61,10 @@ func heal():
 		$attributes/shield.raw_value += 1
 		ui.set_health($attributes/shield.value + 1)
 	
+func storm():
+	if not shield_active:
+		ui.storm_affected()
+	
 func activate_shield():
 	shield_active = true
 	shield_timer.wait_time = shield_duration

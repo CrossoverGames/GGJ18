@@ -44,6 +44,7 @@ func start_solar_storm():
 	active_timer.wait_time = duration
 	emit_signal("solar_storm_started")
 	active_timer.start()
+	ship.storm()
 	show()
 	
 func end_solar_storm():

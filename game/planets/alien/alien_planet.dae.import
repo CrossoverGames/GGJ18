@@ -7,7 +7,7 @@ path="res://.import/alien_planet.dae-cc9e1094bc002cbaf4a75e7e13b74900.scn"
 [deps]
 
 source_file="res://planets/alien/alien_planet.dae"
-source_md5="24dc025f36abeeefb7eac2f3f42fde22"
+source_md5="f4e9503e058c671cbe1ce5a3d922d6f7"
 
 dest_files=[ "res://.import/alien_planet.dae-cc9e1094bc002cbaf4a75e7e13b74900.scn" ]
 dest_md5="ff468d69cb9d5fac68d744fa1123a9e5"
