@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://environment/solar_storm/solar_storm.gd" type="Script" id=1]
+[ext_resource path="res://Interface/SourceCodePro-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -105,14 +106,22 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="solar_storm" type="Spatial" index="0"]
+[sub_resource type="DynamicFont" id=4]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="solar_storm" type="Spatial"]
 
 visible = false
 script = ExtResource( 1 )
-chance = 0.02
+chance = 0.001
 ship_path = null
 alert_time = 2
-duration = 5.0
+duration = 15.0
 
 [node name="Particles" type="Particles" parent="." index="0"]
 
@@ -146,7 +155,7 @@ _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
 
 [node name="Particles3" type="Particles" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6101, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1198, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -176,7 +185,7 @@ _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
 
 [node name="Particles5" type="Particles" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3788, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.5977, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -206,7 +215,7 @@ _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
 
 [node name="Particles2" type="Particles" parent="." index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1638, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.225, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -232,11 +241,11 @@ draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
 draw_pass_1 = SubResource( 2 )
-_sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
+_sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
 
 [node name="Particles4" type="Particles" parent="." index="4"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.9607, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8598, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -262,7 +271,7 @@ draw_order = 0
 process_material = SubResource( 1 )
 draw_passes = 1
 draw_pass_1 = SubResource( 2 )
-_sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
+_sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
 
 [node name="incoming" type="Timer" parent="." index="5"]
 
@@ -277,5 +286,63 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="alert" type="Control" parent="." index="7"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -510.0
+margin_top = 30.0
+margin_right = 510.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="alert" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -508.0
+margin_right = 512.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Anchor" ]
+
+[node name="Label" type="Label" parent="alert/CenterContainer" index="0"]
+
+modulate = Color( 1, 0.265625, 0.265625, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 312.0
+margin_right = 708.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "Solar storm incoming! 
+Use your shield!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Visibility", "custom_fonts" ]
 
 

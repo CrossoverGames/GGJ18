@@ -1,12 +1,13 @@
 extends Spatial
 
-export(float) var chance = 0.02
+export(float) var chance = 0.001
 export(NodePath) var ship_path
 export(int) var alert_time = 2
-export(float) var duration = 5.0
+export(float) var duration = 15.0
 
 onready var incoming_timer = get_node("incoming")
 onready var active_timer = get_node("active")
+onready var alert = get_node("alert")
 
 var ship
 var active = false
@@ -17,6 +18,7 @@ signal solar_storm_ended
 
 func _ready():
 	hide()
+	alert.hide()
 	
 	if ship_path:
 		ship = get_node(ship_path)
@@ -27,13 +29,15 @@ func _ready():
 func _process(delta):
 	var rnd = randf()
 	
-	if rnd < chance and not active and ship.flying:
+	if rnd < chance and not active and ship.separated:
 		active = true
+		alert.show()
 		incoming_timer.wait_time = alert_time
 		incoming_timer.start()
 		emit_signal("solar_storm_incoming")
 		
 func start_solar_storm():
+	alert.hide()
 	incoming_timer.stop()
 	active_timer.wait_time = duration
 	emit_signal("solar_storm_started")

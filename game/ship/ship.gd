@@ -12,12 +12,18 @@ var separated = false
 export(NodePath) var tracks_path = @"../tracks"
 onready var tracks = get_node(tracks_path)
 
+export(NodePath) var storm_path = @"../solar_storm"
+onready var storm = get_node(storm_path)
+
+onready var shield = get_node("shield")
+
 var track_number = 0
 
 func get_speed():  return $attributes/speed.value
 func has_shield(): return $attributes/shield.value > 0
 
 func _ready():
+	shield.hide()
 	$actions/turn.connect("finished", self, "check_track")
 
 enum BTN_TYPE {
@@ -63,6 +69,10 @@ func move_side():
 
 func mod_speed(speed_multiplier, duration):
 	$attributes/speed.add_percent_modifier(speed_multiplier, duration)
+	
+func mod_shield(shield_multiplier, duration):
+	shield.show()
+	$attributes/shield.add_percent_modifier(shield_multiplier, duration)
 
 func check_track():
 	if tracks.is_in_danger(track_number):
@@ -112,6 +122,9 @@ func signal_arrived(type):
 	elif type == BTN_TYPE.brk:
 		print("received signal break")
 		mod_speed(-0.5, 1.0)
+	elif type == BTN_TYPE.shield:
+		print("received signal shield")
+		#mod_shield(1.0, 15)
 
 # DEBUG
 
