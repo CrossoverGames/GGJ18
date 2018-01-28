@@ -32,7 +32,7 @@ func _process(delta):
 	
 	if (chance > (100.0 - draw_chance)) and ship.flying:
 		var rnd = randi()%4
-		var x_rnd = (randi()%200 - 100)
+		var x_rnd = (randi()%500 - 250)
 		var z_rnd = (randi()%30 - 200)
 		var scale_rnd = (randi()%20 + 1)
 		
