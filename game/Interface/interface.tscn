@@ -35,7 +35,7 @@ extra_spacing_char = 1
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="interface" type="CanvasLayer" index="0"]
+[node name="interface" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )

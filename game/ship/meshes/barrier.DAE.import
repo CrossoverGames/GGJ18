@@ -7,7 +7,7 @@ path="res://.import/barrier.DAE-9dae44513dde2c23a46dbff00a9a635f.scn"
 [deps]
 
 source_file="res://ship/meshes/barrier.DAE"
-source_md5="9dbab222b0d47b0c4b600f85b17b1a6a"
+source_md5="94f1ef4627ceb86fb070dfb36d539a77"
 
 dest_files=[ "res://.import/barrier.DAE-9dae44513dde2c23a46dbff00a9a635f.scn" ]
 dest_md5="7f9aaac77e1b67f6f4cbb9241d946cba"

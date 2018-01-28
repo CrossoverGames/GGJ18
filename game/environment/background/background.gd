@@ -33,7 +33,7 @@ func _process(delta):
 	if (chance > (100.0 - draw_chance)) and ship.flying:
 		var rnd = randi()%4
 		var x_rnd = (randi()%200 - 100)
-		var z_rnd = (randi()%30 - 35)
+		var z_rnd = (randi()%30 - 200)
 		var scale_rnd = (randi()%20 + 1)
 		
 		print(x_rnd)
@@ -41,20 +41,20 @@ func _process(delta):
 		if rnd == 0:
 			var mn1 = moon1.instance()
 			add_child(mn1)
-			mn1.set_translation(Vector3(x_rnd, 120, z_rnd))
+			mn1.set_translation(Vector3(x_rnd, 270, z_rnd))
 			mn1.set_scale(Vector3(scale_rnd, scale_rnd, scale_rnd))
 		elif rnd == 1:
 			var mn2 = moon2.instance()
 			add_child(mn2)
-			mn2.set_translation(Vector3(x_rnd, 120, z_rnd))
+			mn2.set_translation(Vector3(x_rnd, 270, z_rnd))
 			mn2.set_scale(Vector3(scale_rnd, scale_rnd, scale_rnd))
 		elif rnd == 2:
 			var mn3 = moon3.instance()
 			add_child(mn3)
-			mn3.set_translation(Vector3(x_rnd, 120, z_rnd))
+			mn3.set_translation(Vector3(x_rnd, 270, z_rnd))
 			mn3.set_scale(Vector3(scale_rnd, scale_rnd, scale_rnd))
 		elif rnd == 3:
 			var blt = belt.instance()
 			add_child(blt)
-			blt.set_translation(Vector3(x_rnd, 120, z_rnd))
+			blt.set_translation(Vector3(x_rnd, 270, z_rnd))
 			blt.set_scale(Vector3(scale_rnd, scale_rnd, scale_rnd))
