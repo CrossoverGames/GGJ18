@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/rockets_and_animation.dae-6f59c3de04014980219f2f7355ef8f9d.scn"
+path="res://.import/Launch base + animation.dae-0320b80add0f3cdda20d9289a52e3c97.scn"
 
 [deps]
 
-source_file="res://ship/meshes/rockets_and_animation.dae"
-source_md5="11316bd84a45b1a5ff167d64082b562b"
+source_file="res://planets/earth/Launch base + animation.dae"
+source_md5="651dafb86d809ef562564a8238da77ba"
 
-dest_files=[ "res://.import/rockets_and_animation.dae-6f59c3de04014980219f2f7355ef8f9d.scn" ]
-dest_md5="8232d6083efbf1781d861e8b837de46c"
+dest_files=[ "res://.import/Launch base + animation.dae-0320b80add0f3cdda20d9289a52e3c97.scn" ]
+dest_md5="fa76de8ecd080d5881a03eeba36bf83e"
 
 [params]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ship/ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://ship/meshes/Rockets + Animation.dae" type="PackedScene" id=2]
-[ext_resource path="res://ship/meshes/sphere_particle.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://ship/meshes/sphere_particle.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=3]
+[ext_resource path="res://ship/boosters.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=4]
 
 offsets = PoolRealArray( 0.573964, 0.994083 )
 colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )
@@ -12,7 +13,7 @@ colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )
 [sub_resource type="GradientTexture" id=2]
 
 flags = 4
-gradient = SubResource( 1 )
+gradient = SubResource( 4 )
 width = 2048
 
 [sub_resource type="ParticlesMaterial" id=3]
@@ -52,23 +53,22 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Scale" ]
 
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 1, 1, 1 )
+
 [node name="ship-with-rockets" instance=ExtResource( 1 )]
 
-[node name="attributes" parent="." index="4"]
+transform = Transform( 1, -2.98024e-08, 0, 2.98024e-08, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
-editor/display_folded = true
+[node name="particles" type="Spatial" parent="." index="1"]
 
-[node name="actions" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
-editor/display_folded = true
+[node name="Particles" type="Particles" parent="particles" index="0"]
 
-[node name="rockets" parent="." index="6" instance=ExtResource( 2 )]
-
-transform = Transform( 1.18528, 0, 0, 0, 1.18528, 0, 0, 0, 1.18528, 4.97256e-08, 1.66851, 0 )
-
-[node name="Particles" type="Particles" parent="rockets" index="4"]
-
-transform = Transform( 0.843683, -3.55271e-15, 7.49344e-16, -3.55271e-15, 0.843683, 2.51437e-08, -2.99736e-15, -2.51437e-08, 0.843683, -1.67503e-07, -5.62046, -3.06167 )
+transform = Transform( 0.427286, 1.49012e-08, -1.86265e-09, 0, 0.42566, 0.0372404, 0, -0.0372404, 0.42566, -0.0488538, -1.98272, -0.017035 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -78,23 +78,195 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-emitting = false
+emitting = true
 amount = 130
 lifetime = 5.0
 one_shot = false
-preprocess = 0.0
+preprocess = 10.0
 speed_scale = 2.53
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
+visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 3 )
 draw_passes = 1
-draw_pass_1 = ExtResource( 3 )
-_sections_unfolded = [ "Draw Passes", "Drawing", "Process Material", "Time" ]
+draw_pass_1 = ExtResource( 2 )
+_sections_unfolded = [ "Drawing", "Transform" ]
+
+[node name="Particles2" type="Particles" parent="particles" index="1"]
+
+transform = Transform( -1.86773e-08, -0.0372404, 0.42566, -4.44089e-16, 0.42566, 0.0372404, -0.427286, 1.62783e-09, -1.86062e-08, -0.0488537, -1.98272, -0.017035 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+emitting = true
+amount = 130
+lifetime = 5.0
+one_shot = false
+preprocess = 10.0
+speed_scale = 2.53
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 3 )
+draw_passes = 1
+draw_pass_1 = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles3" type="Particles" parent="particles" index="2"]
+
+transform = Transform( -0.427286, 1.49012e-08, -3.63216e-08, 0, 0.42566, 0.0372404, 3.73545e-08, 0.0372404, -0.42566, -0.0488537, -1.98272, -0.017035 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+emitting = true
+amount = 130
+lifetime = 5.0
+one_shot = false
+preprocess = 10.0
+speed_scale = 2.53
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 3 )
+draw_passes = 1
+draw_pass_1 = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles4" type="Particles" parent="particles" index="3"]
+
+transform = Transform( 5.09533e-09, 0.0372404, -0.42566, 0, 0.42566, 0.0372404, 0.427286, -4.44088e-10, 5.07595e-09, -0.0488537, -1.98272, -0.017035 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+emitting = true
+amount = 130
+lifetime = 5.0
+one_shot = false
+preprocess = 10.0
+speed_scale = 2.53
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_aabb = AABB( -3.10201, -4, -4.73626, 6.09366, 8, 9.47252 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 3 )
+draw_passes = 1
+draw_pass_1 = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles" parent="mesh" index="2"]
+
+visible = false
+
+[node name="Particles2" parent="mesh" index="3"]
+
+visible = false
+
+[node name="Particles3" parent="mesh" index="4"]
+
+visible = false
+
+[node name="Particles4" parent="mesh" index="5"]
+
+visible = false
+
+[node name="attributes" parent="." index="5"]
+
+editor/display_folded = true
+
+[node name="actions" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="7"]
+
+transform = Transform( 0.452777, -0.603186, 0.656627, 8.45384e-09, 0.73644, 0.676503, -0.891624, -0.306305, 0.333443, 5.83394e-07, 19.5754, 17.0987 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Shadow" ]
+
+[node name="KinematicBody" type="KinematicBody" parent="." index="8"]
+
+editor/display_folded = true
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 3 )
+active = false
+delay_time = 1
+direction = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.686134, 4.18627, -3.12374 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="rockets" parent="KinematicBody" index="1" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34688e-08, 2.4652, -0.0332336 )
 
 
-[editable path="rockets"]
+[editable path="KinematicBody/rockets"]

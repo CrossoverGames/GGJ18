@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Interface/interface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Signal/controller.tscn" type="PackedScene" id=2]
@@ -8,6 +8,50 @@
 [ext_resource path="res://environment/asteroid/AsteroidSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/sattelite/SatteliteSpawner.gd" type="Script" id=7]
 [ext_resource path="res://environment/sattelite/Sattelite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=9]
+[ext_resource path="res://planets/earth/Launch base + animation.dae" type="PackedScene" id=10]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "menu_to_decouple"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray(  )
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -4, 0.25 ),
+"update": 0,
+"values": [ Vector3( 21, -0.772711, 11.8015 ), Vector3( 0, 8.22729, 32.8015 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -4, 0.25 ),
+"update": 0,
+"values": [ Vector3( 0, 90, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 1, 9.76795, 1 )
 
 [node name="game" type="Node" index="0"]
 
@@ -21,7 +65,7 @@ signal_path = "res://Signal/signal.tscn"
 
 [node name="Camera" type="Camera" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, -6.70552e-08, 0, 6.70552e-08, 1, 0, 19.757, 72.0985 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, -0.772711, 11.8015 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -34,6 +78,7 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
+_sections_unfolded = [ "Transform" ]
 
 [node name="tracks" type="Spatial" parent="." index="3"]
 
@@ -50,6 +95,8 @@ transform = Transform( 1, -2.98024e-08, 0, 2.98024e-08, 1, 0, 0, 0, 1, 2.98024e-
 
 transform = Transform( 149.212, 0, 0, 0, 149.212, 0, 0, 0, 149.212, -11.2833, -392.234, -60.6015 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+active = true
+delay_time = 0
 
 [node name="AsteroidSpawner" parent="." index="6" instance=ExtResource( 6 )]
 
@@ -62,6 +109,46 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 109, 0 )
 script = ExtResource( 7 )
 sattelite_scene = ExtResource( 8 )
 interval = 5.0
+
+[node name="camera_control" type="AnimationPlayer" parent="." index="8"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/menu_to_decouple = SubResource( 1 )
+blend_times = [  ]
+autoplay = ""
+
+[node name="KinematicBody" type="KinematicBody" parent="." index="9"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 9 )
+active = true
+delay_time = 0
+direction = Vector3( 0, 0, 0 )
+
+[node name="launch platform" parent="KinematicBody" index="0" instance=ExtResource( 10 )]
+
+transform = Transform( 7.82325, 0, 0, 0, 6.77513, -3.91162, 0, 3.91162, 6.77513, 0, -16, -7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -7 )
+shape = SubResource( 2 )
+disabled = false
 
 [connection signal="destroyed" from="ship" to="controller" method="on_ship_destroyed"]
 

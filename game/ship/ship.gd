@@ -76,7 +76,8 @@ func _process(delta):
 		
 func launch():
 	$attributes/speed.value = 10
-	$rockets/Particles.emitting = true
+	#$rockets/Particles.emitting = true
+	get_parent().get_node("KinematicBody/launch platform/AnimationPlayer").play("launch")
 	
 func signal_arrived(type):
 	if type == BTN_TYPE.action:
@@ -86,11 +87,16 @@ func signal_arrived(type):
 			# particles, anim, etc
 		elif not separated:
 			separated = true
-			$rockets/AnimationPlayer.play("decouple")
-			yield($rockets/anim, "animation_finished")
+			$KinematicBody/rockets/AnimationPlayer.play("decouple")
+			$KinematicBody.set_active(true)
+			$mesh/Particles.emitting = true
+			$mesh/Particles2.emitting = true
+			$mesh/Particles3.emitting = true
+			$mesh/Particles4.emitting = true
+			yield($KinematicBody/rockets/AnimationPlayer, "animation_finished")
 			emit_signal("separated")
-			$rockets/Particles.emitting = false
-			$rockets.queue_free()
+			$KinematicBody.queue_free()
+			get_parent().get_node("camera_control").play("menu_to_decouple")
 	
 	if not separated: return
 	
