@@ -15,15 +15,20 @@ onready var tracks = get_node(tracks_path)
 export(NodePath) var storm_path = @"../solar_storm"
 onready var storm = get_node(storm_path)
 
+export(float) var shield_duration = 15.0
+onready var shield_timer = get_node("shield/timer")
+
 onready var shield = get_node("shield")
 
 var track_number = 0
+var shield_active = false
 
 func get_speed():  return $attributes/speed.value
 func has_shield(): return $attributes/shield.value > 0
 
 func _ready():
 	shield.hide()
+	shield_timer.connect("timeout", self, "end_shield")
 	$actions/turn.connect("finished", self, "check_track")
 
 enum BTN_TYPE {
@@ -41,6 +46,17 @@ func damage():
 		return
 	
 	death()
+	
+func activate_shield():
+	shield_active = true
+	shield_timer.wait_time = shield_duration
+	shield_timer.start()
+	shield.show()
+	
+func end_shield():
+	shield_timer.stop()
+	shield_active = false
+	shield.hide()
 
 func death():
 	dead = true
@@ -124,7 +140,7 @@ func signal_arrived(type):
 		mod_speed(-0.5, 1.0)
 	elif type == BTN_TYPE.shield:
 		print("received signal shield")
-		#mod_shield(1.0, 15)
+		activate_shield()
 
 # DEBUG
 

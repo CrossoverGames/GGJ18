@@ -61,6 +61,7 @@ extents = Vector3( 1, 1, 1 )
 [node name="ship-with-rockets" instance=ExtResource( 1 )]
 
 storm_path = NodePath("../solar_storm")
+shield_duration = 15.0
 
 [node name="particles" type="Spatial" parent="." index="1"]
 
