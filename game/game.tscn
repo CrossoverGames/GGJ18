@@ -1,17 +1,18 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Interface/interface.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Signal/controller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://tracks/tracks.gd" type="Script" id=3]
-[ext_resource path="res://ship/rocket.tscn" type="PackedScene" id=4]
-[ext_resource path="res://planets/earth/earth.tscn" type="PackedScene" id=5]
-[ext_resource path="res://environment/asteroid/AsteroidSpawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://environment/sattelite/SatteliteSpawner.gd" type="Script" id=7]
-[ext_resource path="res://environment/sattelite/Sattelite.tscn" type="PackedScene" id=8]
-[ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=9]
-[ext_resource path="res://planets/earth/Launch base + animation.dae" type="PackedScene" id=10]
-[ext_resource path="res://environment/sky/space-2.jpg" type="Texture" id=11]
-[ext_resource path="res://environment/background/background.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Interface/DangerZoneWarning.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Signal/controller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tracks/tracks.gd" type="Script" id=4]
+[ext_resource path="res://ship/rocket.tscn" type="PackedScene" id=5]
+[ext_resource path="res://planets/earth/earth.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/asteroid/AsteroidSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://environment/sattelite/SatteliteSpawner.gd" type="Script" id=8]
+[ext_resource path="res://environment/sattelite/Sattelite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=10]
+[ext_resource path="res://planets/earth/Launch base + animation.dae" type="PackedScene" id=11]
+[ext_resource path="res://environment/sky/space-2.jpg" type="Texture" id=12]
+[ext_resource path="res://environment/background/background.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -58,7 +59,7 @@ extents = Vector3( 1, 9.76795, 1 )
 [sub_resource type="PanoramaSky" id=3]
 
 radiance_size = 4
-panorama = ExtResource( 11 )
+panorama = ExtResource( 12 )
 
 [sub_resource type="Environment" id=4]
 
@@ -144,13 +145,15 @@ _sections_unfolded = [ "Background" ]
 
 [node name="interface" parent="." index="0" instance=ExtResource( 1 )]
 
-[node name="controller" parent="." index="1" instance=ExtResource( 2 )]
+[node name="DangerZoneWarning" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="controller" parent="." index="2" instance=ExtResource( 3 )]
 
 canvas_path = NodePath("../interface")
 rocket_path = NodePath("../ship")
 signal_path = "res://Signal/signal.tscn"
 
-[node name="Camera" type="Camera" parent="." index="2"]
+[node name="Camera" type="Camera" parent="." index="3"]
 
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, -0.772711, 11.8015 )
 keep_aspect = 1
@@ -167,37 +170,37 @@ near = 0.05
 far = 100.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="tracks" type="Spatial" parent="." index="3"]
+[node name="tracks" type="Spatial" parent="." index="4"]
 
-script = ExtResource( 3 )
-track_size = 20.0
+script = ExtResource( 4 )
+track_size = 15.0
 track_amount = 9
 danger_zone = 2
 
-[node name="ship" parent="." index="4" instance=ExtResource( 4 )]
+[node name="ship" parent="." index="5" instance=ExtResource( 5 )]
 
 transform = Transform( 1, -2.98024e-08, 0, 2.98024e-08, 1, 0, 0, 0, 1, 2.98024e-08, 0.5, 0 )
 
-[node name="earth" parent="." index="5" instance=ExtResource( 5 )]
+[node name="earth" parent="." index="6" instance=ExtResource( 6 )]
 
 transform = Transform( 149.212, 0, 0, 0, 149.212, 0, 0, 0, 149.212, -11.2833, -392.234, -60.6015 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 active = true
 delay_time = 0
 
-[node name="AsteroidSpawner" parent="." index="6" instance=ExtResource( 6 )]
+[node name="AsteroidSpawner" parent="." index="7" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 89, 0 )
 start_active = false
 
-[node name="SatteliteSpawner" type="Spatial" parent="." index="7"]
+[node name="SatteliteSpawner" type="Spatial" parent="." index="8"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 109, 0 )
-script = ExtResource( 7 )
-sattelite_scene = ExtResource( 8 )
+script = ExtResource( 8 )
+sattelite_scene = ExtResource( 9 )
 interval = 20.0
 
-[node name="camera_control" type="AnimationPlayer" parent="." index="8"]
+[node name="camera_control" type="AnimationPlayer" parent="." index="9"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -208,7 +211,7 @@ anims/menu_to_decouple = SubResource( 1 )
 blend_times = [  ]
 autoplay = ""
 
-[node name="KinematicBody" type="KinematicBody" parent="." index="9"]
+[node name="KinematicBody" type="KinematicBody" parent="." index="10"]
 
 editor/display_folded = true
 input_ray_pickable = true
@@ -222,12 +225,12 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 active = true
 delay_time = 0
 direction = Vector3( 0, 0, 0 )
 
-[node name="launch platform" parent="KinematicBody" index="0" instance=ExtResource( 10 )]
+[node name="launch platform" parent="KinematicBody" index="0" instance=ExtResource( 11 )]
 
 transform = Transform( 7.82325, 0, 0, 0, 6.77513, -3.91162, 0, 3.91162, 6.77513, 0, -16, -7 )
 _sections_unfolded = [ "Transform" ]
@@ -238,15 +241,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -7 )
 shape = SubResource( 2 )
 disabled = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="11"]
 
 environment = SubResource( 4 )
 
-[node name="background" parent="." index="11" instance=ExtResource( 12 )]
+[node name="background" parent="." index="12" instance=ExtResource( 13 )]
 
 ship_path = NodePath("../ship")
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="12"]
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="13"]
 
 transform = Transform( 0.452777, -0.603186, 0.656627, 8.45384e-09, 0.73644, 0.676503, -0.891624, -0.306305, 0.333443, 5.83394e-07, 19.5754, 17.0987 )
 layers = 1
@@ -274,6 +277,8 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 
 [connection signal="destroyed" from="ship" to="controller" method="on_ship_destroyed"]
+
+[connection signal="in_danger" from="ship" to="DangerZoneWarning" method="appear"]
 
 [connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
 
