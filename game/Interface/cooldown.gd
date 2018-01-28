@@ -12,6 +12,13 @@ func _ready():
 	connect("pressed", self, "activate_cooldown")
 
 func activate_cooldown():
-	self.disabled = true
-	timer.wait_time = time
-	timer.start()
+	if time > 0:
+		self.disabled = true
+		timer.wait_time = time
+		timer.start()
+
+func cooldown_with_time(secs):
+	if secs > 0:
+		self.disabled = true
+		timer.wait_time = secs
+		timer.start()
