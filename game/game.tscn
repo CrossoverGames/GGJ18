@@ -171,7 +171,7 @@ current = false
 fov = 91.7
 size = 1.0
 near = 0.05
-far = 100.0
+far = 500.0
 _sections_unfolded = [ "Transform" ]
 
 [node name="tracks" type="Spatial" parent="." index="4"]
@@ -189,8 +189,6 @@ transform = Transform( 1, -2.98024e-08, 0, 2.98024e-08, 1, 0, 0, 0, 1, 2.98024e-
 
 transform = Transform( 149.212, 0, 0, 0, 149.212, 0, 0, 0, 149.212, -11.2833, -392.234, -60.6015 )
 _sections_unfolded = [ "Transform", "Visibility" ]
-active = true
-delay_time = 0
 
 [node name="AsteroidSpawner" parent="." index="7" instance=ExtResource( 7 )]
 
