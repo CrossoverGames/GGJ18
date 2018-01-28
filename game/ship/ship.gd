@@ -9,6 +9,9 @@ var elapsed_time = 0.0
 var flying = false
 var separated = false
 
+export(NodePath) var ui_path = @"../interface"
+onready var ui = get_node(ui_path)
+
 export(NodePath) var tracks_path = @"../tracks"
 onready var tracks = get_node(tracks_path)
 
@@ -47,8 +50,10 @@ enum BTN_TYPE {
 func damage():
 	if has_shield():
 		$attributes/shield.raw_value -= 1
+		ui.set_health($attributes/shield.value + 1)
 		return
 	
+	ui.set_health(0)
 	death()
 	
 func activate_shield():
@@ -168,7 +173,6 @@ func signal_arrived(type):
 		activate_shield()
 
 # DEBUG
-
 func print_speed():
 	print(str($attributes/speed.value))
 

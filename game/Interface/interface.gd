@@ -74,3 +74,18 @@ func print_message(message, duration = 0):
 	if duration > 0:
 		yield(get_tree().create_timer(duration), "timeout")
 		$"actions/text-box/label".text = ""
+
+func set_health(hp):
+	$"health/hp-1".visible = false
+	$"health/hp-2".visible = false
+	$"health/hp-3".visible = false
+	$"health/hp-4".visible = false
+	
+	if hp >= 1:
+		$"health/hp-1".visible = true
+	if hp >= 2:
+		$"health/hp-2".visible = true
+	if hp >= 3:
+		$"health/hp-3".visible = true
+	if hp >= 4:
+		$"health/hp-4".visible = true

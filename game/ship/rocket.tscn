@@ -94,6 +94,7 @@ extents = Vector3( 1, 1, 1 )
 [node name="ship-with-rockets" index="0" instance=ExtResource( 1 )]
 
 transform = Transform( -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 11.5, 0 )
+ui_path = NodePath("../interface")
 storm_path = NodePath("../solar_storm")
 shield_duration = 15.0
 
@@ -246,9 +247,9 @@ visible = false
 
 anims/land = SubResource( 4 )
 
-[node name="attributes" parent="." index="5"]
+[node name="shield" parent="attributes" index="0"]
 
-editor/display_folded = true
+raw_value = 3.0
 
 [node name="actions" parent="." index="6"]
 
