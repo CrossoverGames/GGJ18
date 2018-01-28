@@ -16,7 +16,7 @@ extents = Vector3( 75.1837, 1, 55 )
 
 extents = Vector3( 10, 1, 10 )
 
-[node name="AsteroidSpawner" type="Spatial" index="0"]
+[node name="AsteroidSpawner" type="Spatial"]
 
 script = ExtResource( 1 )
 asteroid_scene = ExtResource( 2 )

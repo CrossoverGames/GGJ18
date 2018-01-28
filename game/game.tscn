@@ -186,6 +186,7 @@ danger_zone = 2
 [node name="ship" parent="." index="5" instance=ExtResource( 5 )]
 
 transform = Transform( 1, -2.98024e-08, 0, 2.98024e-08, 1, 0, 0, 0, 1, 2.98024e-08, 0.5, 0 )
+shield_duration = 20.0
 
 [node name="earth" parent="." index="6" instance=ExtResource( 6 )]
 
