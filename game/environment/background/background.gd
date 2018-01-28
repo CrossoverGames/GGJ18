@@ -22,6 +22,7 @@ func _ready():
 func delete_body(body):
 	if body.is_in_group("background"):
 		body.queue_free()
+		print("deleted back obj")
 
 func _process(delta):
 	var chance = randi()%100
@@ -29,7 +30,7 @@ func _process(delta):
 	if (chance > (100 - draw_chance)) and ship.flying:
 		var rnd = randi()%4
 		var x_rnd = (randi()%200 - 100)
-		var z_rnd = (randi()%30 - 45)
+		var z_rnd = (randi()%30 - 35)
 		var scale_rnd = (randi()%20 + 1)
 		
 		print(x_rnd)
