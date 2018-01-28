@@ -7,7 +7,7 @@ path="res://.import/shield.DAE-67a6e48fedf5a3fa794371b5c94c705e.scn"
 [deps]
 
 source_file="res://ship/meshes/shield.DAE"
-source_md5="3613aab99c1509894265ad97bf9fad7b"
+source_md5="55d8733a6eb392f412369e890223dd40"
 
 dest_files=[ "res://.import/shield.DAE-67a6e48fedf5a3fa794371b5c94c705e.scn" ]
 dest_md5="fe9d52a56cd104e4d0469e7ce5d68302"

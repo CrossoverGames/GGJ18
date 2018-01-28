@@ -22,6 +22,7 @@ onready var shield = get_node("shield")
 
 var track_number = 0
 var shield_active = false
+var end = false
 
 func get_speed():  return $attributes/speed.value
 func has_shield(): return $attributes/shield.value > 0
@@ -57,11 +58,25 @@ func end_shield():
 	shield_timer.stop()
 	shield_active = false
 	shield.hide()
+	
+func land():
+	end = true
+	if track_number < 0:
+		$anim.play("tilt_right")
+	elif track_number > 0:
+		$anim.play("tilt_left")
+	if track_number != 0:
+		track_number = 0
+		move_side()
+		yield($anim, "animation_finished")
+	$anim.play("land")
+	yield($anim, "animation_finished")
+	$attributes/speed.value = 0
 
 func death():
 	dead = true
 	emit_signal("destroyed")
-	queue_free()
+	hide()
 
 func move_left():
 	if $anim.is_playing(): return
@@ -80,7 +95,9 @@ func move_right():
 func move_side():
 	var distance = (tracks.track_x(track_number) - self.translation.x)
 	var duration = $anim.current_animation_length / $anim.playback_speed
-	var speed = distance / duration
+	var speed = 0
+	if duration != 0:
+		speed = distance / duration
 	$actions/turn.execute([Vector3(speed, 0, 0), duration])
 
 func mod_speed(speed_multiplier, duration):
@@ -106,6 +123,9 @@ func launch():
 	get_parent().get_node("KinematicBody/launch platform/AnimationPlayer").play("launch")
 	
 func signal_arrived(type):
+	if end:
+		return
+	
 	if type == BTN_TYPE.action:
 		if not flying:
 			flying = true
