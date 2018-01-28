@@ -48,7 +48,7 @@ transform = Transform( 1, -2.98024e-08, 0, 2.98024e-08, 1, 0, 0, 0, 1, 2.98024e-
 
 [node name="earth" parent="." index="5" instance=ExtResource( 5 )]
 
-transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, -2, -85, -14 )
+transform = Transform( 149.212, 0, 0, 0, 149.212, 0, 0, 0, 149.212, -11.2833, -392.234, -60.6015 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="AsteroidSpawner" parent="." index="6" instance=ExtResource( 6 )]
@@ -65,8 +65,8 @@ interval = 5.0
 
 [connection signal="destroyed" from="ship" to="controller" method="on_ship_destroyed"]
 
-[connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
-
 [connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
+
+[connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
 
 

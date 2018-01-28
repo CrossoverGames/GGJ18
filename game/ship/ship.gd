@@ -86,7 +86,7 @@ func signal_arrived(type):
 			# particles, anim, etc
 		elif not separated:
 			separated = true
-			$rockets/anim.play("decouple")
+			$rockets/AnimationPlayer.play("decouple")
 			yield($rockets/anim, "animation_finished")
 			emit_signal("separated")
 			$rockets/Particles.emitting = false
