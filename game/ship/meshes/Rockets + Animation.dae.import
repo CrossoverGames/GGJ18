@@ -7,10 +7,10 @@ path="res://.import/Rockets + Animation.dae-38bb584fed27a1c5b9fc21b772d90dcb.scn
 [deps]
 
 source_file="res://ship/meshes/Rockets + Animation.dae"
-source_md5="7e8cbb8bf8319329f625334f3e7901f8"
+source_md5="77267243984805f656b4b20e000474c1"
 
 dest_files=[ "res://.import/Rockets + Animation.dae-38bb584fed27a1c5b9fc21b772d90dcb.scn" ]
-dest_md5="44fcbf5474f2be66eb45783dd3229a31"
+dest_md5="7af0582d720982ad9981ae09a0c76011"
 
 [params]
 

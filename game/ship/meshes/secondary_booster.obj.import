@@ -9,10 +9,10 @@ path="res://.import/secondary_booster.obj-60922477f2d3e009aefb1ae8ebaa936b.mesh"
 files=[ "res://.import/secondary_booster.obj-60922477f2d3e009aefb1ae8ebaa936b.mesh" ]
 
 source_file="res://ship/meshes/secondary_booster.obj"
-source_md5="163147eece0f2f7f790cdc09ea3bac27"
+source_md5="d3942d6998c19870054e6fcc48684581"
 
 dest_files=[ "res://.import/secondary_booster.obj-60922477f2d3e009aefb1ae8ebaa936b.mesh", "res://.import/secondary_booster.obj-60922477f2d3e009aefb1ae8ebaa936b.mesh" ]
-dest_md5="18cf91b9e8f524ee472898a0198f485d"
+dest_md5="407d00b300019105f55c63eb53df2ee0"
 
 [params]
 

@@ -151,6 +151,7 @@ _sections_unfolded = [ "Background" ]
 [node name="DangerZoneWarning" parent="." index="1" instance=ExtResource( 2 )]
 
 visible = false
+ui_path = NodePath("../interface")
 
 [node name="controller" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -284,6 +285,7 @@ directional_shadow_max_distance = 200.0
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.0091, 0 )
 ship_path = NodePath("../ship")
+ui_path = NodePath("../interface")
 
 [node name="end" parent="." index="15" instance=ExtResource( 15 )]
 

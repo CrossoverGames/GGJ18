@@ -11,7 +11,7 @@ source_file="res://ship/meshes/shield_texture.png"
 source_md5="03328a99e0acc6568a75738d8fc1d38d"
 
 dest_files=[ "res://.import/shield_texture.png-b82d08ac153000d3aa70b83a88693163.s3tc.stex", "res://.import/shield_texture.png-b82d08ac153000d3aa70b83a88693163.etc2.stex" ]
-dest_md5="5656427b6c76f89e60708cdb90d3bd05"
+dest_md5="b66552b6bcf06cdf0f390cbb23a55a83"
 
 [params]
 
