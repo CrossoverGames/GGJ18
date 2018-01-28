@@ -97,3 +97,6 @@ func set_health(hp):
 		$"health/hp-3".visible = true
 	if hp >= 4:
 		$"health/hp-4".visible = true
+
+func _on_ship_separated():
+	$logo.hide()

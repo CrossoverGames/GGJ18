@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Interface/interface.gd" type="Script" id=1]
 [ext_resource path="res://Interface/text-panel.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Interface/signal/signal-display.png" type="Texture" id=23]
 [ext_resource path="res://Interface/minimap.gd" type="Script" id=24]
 [ext_resource path="res://Interface/signal/signal.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Interface/Logo.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -175,6 +176,7 @@ autostart = false
 
 [node name="health" type="Control" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -440,5 +442,32 @@ signal_interface_path = "res://Interface/signal/signal.tscn"
 
 visible = false
 margin_bottom = 1062.0
+
+[node name="logo" type="TextureButton" parent="." index="8"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -461.0
+margin_top = -547.0
+margin_right = 4883.0
+margin_bottom = 2277.0
+rect_scale = Vector2( 0.08, 0.08 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 26 )
+script = ExtResource( 11 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "Textures" ]
+time = 0.0
 
 

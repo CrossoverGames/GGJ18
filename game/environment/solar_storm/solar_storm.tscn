@@ -120,7 +120,7 @@ script = ExtResource( 1 )
 chance = 0.001
 ship_path = null
 ui_path = null
-alert_time = 2
+alert_time = 5
 duration = 15.0
 
 [node name="Particles" type="Particles" parent="." index="0"]
