@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Interface/interface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Signal/controller.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://environment/sattelite/Sattelite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/EnvironmentObject.gd" type="Script" id=9]
 [ext_resource path="res://planets/earth/Launch base + animation.dae" type="PackedScene" id=10]
+[ext_resource path="res://environment/sky/space-2.jpg" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 
@@ -53,6 +54,90 @@ tracks/2/keys = {
 
 extents = Vector3( 1, 9.76795, 1 )
 
+[sub_resource type="PanoramaSky" id=3]
+
+radiance_size = 4
+panorama = ExtResource( 11 )
+
+[sub_resource type="Environment" id=4]
+
+background_mode = 2
+background_sky = SubResource( 3 )
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = true
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+
 [node name="game" type="Node" index="0"]
 
 [node name="interface" parent="." index="0" instance=ExtResource( 1 )]
@@ -74,7 +159,7 @@ v_offset = 0.0
 doppler_tracking = 0
 projection = 0
 current = false
-fov = 70.0
+fov = 91.7
 size = 1.0
 near = 0.05
 far = 100.0
@@ -108,7 +193,7 @@ start_active = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 109, 0 )
 script = ExtResource( 7 )
 sattelite_scene = ExtResource( 8 )
-interval = 5.0
+interval = 20.0
 
 [node name="camera_control" type="AnimationPlayer" parent="." index="8"]
 
@@ -123,6 +208,7 @@ autoplay = ""
 
 [node name="KinematicBody" type="KinematicBody" parent="." index="9"]
 
+editor/display_folded = true
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -150,10 +236,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -7 )
 shape = SubResource( 2 )
 disabled = false
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
+
+environment = SubResource( 4 )
+
 [connection signal="destroyed" from="ship" to="controller" method="on_ship_destroyed"]
 
-[connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
-
 [connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
+
+[connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
 
 

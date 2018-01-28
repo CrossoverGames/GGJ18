@@ -88,7 +88,7 @@ func signal_arrived(type):
 		elif not separated:
 			separated = true
 			$KinematicBody/rockets/AnimationPlayer.play("decouple")
-			$KinematicBody.set_active(true)
+			$KinematicBody.set_time()
 			$mesh/Particles.emitting = true
 			$mesh/Particles2.emitting = true
 			$mesh/Particles3.emitting = true

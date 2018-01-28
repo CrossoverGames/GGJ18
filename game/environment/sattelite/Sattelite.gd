@@ -1,5 +1,7 @@
 extends "../EnvironmentObject.gd"
 
+export var angular_speed = 30
+
 func _ready():
 	$Area.connect("body_entered", self, "on_body_enter")
 
@@ -9,4 +11,4 @@ func on_body_enter(body):
 
 func _process(delta):
 	#$mesh.rotation_degrees.y += deg2rad(180) * delta
-	$mesh.rotate_y(deg2rad(180) * delta)
+	$mesh.rotate_y(deg2rad(angular_speed) * delta)

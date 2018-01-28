@@ -25,11 +25,14 @@ axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+active = true
+delay_time = 0
 direction = Vector3( 0, 0, 0 )
+angular_speed = 30
 
 [node name="mesh" parent="." index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 3.07287, 0, 0, 0, 3.07288, 0, 0, 0, 3.07287, 0, 0, 0 )
+transform = Transform( 3.07287, 0, 0, 0, 3.07288, 0, 0, 0, 3.07287, -29, 0, -42 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="." index="1"]
