@@ -288,14 +288,14 @@ ship_path = NodePath("../ship")
 
 [node name="end" parent="." index="15" instance=ExtResource( 15 )]
 
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 269.704, 0 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 2000, 0 )
 
 [connection signal="destroyed" from="ship" to="controller" method="on_ship_destroyed"]
 
 [connection signal="in_danger" from="ship" to="DangerZoneWarning" method="appear"]
 
-[connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
-
 [connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
+
+[connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
 
 
