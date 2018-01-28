@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Engine Hum.ogg-07341b5e4008198805c8f5439a7bd1fb.oggstr"
+
+[deps]
+
+source_file="res://sounds/Engine Hum.ogg"
+source_md5="da42cf3027b35ca127300e5c15961db6"
+
+dest_files=[ "res://.import/Engine Hum.ogg-07341b5e4008198805c8f5439a7bd1fb.oggstr" ]
+dest_md5="8dbacfb2dc344ca5c40946133a08e742"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -116,7 +116,6 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="solar_storm" type="Spatial"]
 
-visible = false
 script = ExtResource( 1 )
 chance = 0.001
 ship_path = null

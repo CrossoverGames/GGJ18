@@ -20,6 +20,9 @@ onready var shield_timer = get_node("shield/timer")
 
 onready var shield = get_node("shield")
 
+onready var sound_takeoff = get_node("takeoff")
+onready var sound_engine = get_node("engine")
+
 var track_number = 0
 var shield_active = false
 var end = false
@@ -121,6 +124,8 @@ func launch():
 	$attributes/speed.value = 10
 	#$rockets/Particles.emitting = true
 	get_parent().get_node("KinematicBody/launch platform/AnimationPlayer").play("launch")
+	sound_takeoff.play()
+	sound_engine.play()
 	
 func signal_arrived(type):
 	if end:
