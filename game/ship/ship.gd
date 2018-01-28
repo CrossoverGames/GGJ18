@@ -55,6 +55,11 @@ func damage():
 	
 	ui.set_health(0)
 	death()
+
+func heal():
+	if $attributes/shield.raw_value < 3:
+		$attributes/shield.raw_value += 1
+		ui.set_health($attributes/shield.value + 1)
 	
 func activate_shield():
 	shield_active = true
