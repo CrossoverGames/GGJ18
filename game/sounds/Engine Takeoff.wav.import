@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Engine Takeoff.wav-4626744d2498cad0cdee4d850dd78f27.sample"
+
+[deps]
+
+source_file="res://sounds/Engine Takeoff.wav"
+source_md5="cfe043dd01ec4159d74ee0a543606581"
+
+dest_files=[ "res://.import/Engine Takeoff.wav-4626744d2498cad0cdee4d850dd78f27.sample" ]
+dest_md5="1774f10c55c88a6a6a177a6efa640963"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
