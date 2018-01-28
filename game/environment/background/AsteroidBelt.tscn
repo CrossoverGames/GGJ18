@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/background/asteroid belt.dae" type="PackedScene" id=1]
+
+[node name="AsteroidBelt" index="0" instance=ExtResource( 1 )]
+
+[node name="Sphere004" parent="Sphere003" index="0"]
+
+transform = Transform( -0.253016, 0.00387174, 0.00565196, -0.000119105, 0.206295, -0.146649, -0.00684988, -0.146598, -0.206218, -17.8734, 52.854, 48.4839 )
+
+[node name="Sphere005" parent="Sphere003" index="1"]
+
+transform = Transform( 0.245449, 0.191625, 0.290182, 0.150229, -0.378762, 0.12305, 0.313619, 0.0314609, -0.286049, -53.9509, -46.4928, -29.6798 )
+
+[node name="Sphere006" parent="Sphere003" index="2"]
+
+transform = Transform( -0.296989, -0.183119, 0.107167, -0.205667, 0.293763, -0.0679991, -0.0521373, -0.115716, -0.342215, -3.04594, 48.1446, 73.029 )
+
+[node name="Sphere007" parent="Sphere003" index="3"]
+
+transform = Transform( 0.260173, 0.288872, -0.0157049, -0.222946, 0.213665, 0.236698, 0.18436, -0.149277, 0.308401, -74.0649, -9.17034, -26.0272 )
+
+[node name="Sphere008" parent="Sphere003" index="4"]
+
+transform = Transform( 0.191705, 0.0203405, 0.130255, 0.0416384, 0.208766, -0.0938826, -0.125086, 0.100668, 0.168377, 57.1955, -70.3113, -3.32489 )
+
+[node name="Sphere009" parent="Sphere003" index="5"]
+
+transform = Transform( -0.214771, -0.130459, -0.147118, 0.1413, -0.253905, 0.0188757, -0.136739, -0.0574678, 0.250579, -56.7532, 21.6968, -10.4184 )
+
+[node name="Sphere010" parent="Sphere003" index="6"]
+
+transform = Transform( -0.20866, -0.0674063, 0.0911152, -0.00539838, 0.196589, 0.133072, -0.11321, 0.114864, -0.174282, 62.4493, 11.5525, 54.3482 )
+
+[node name="Sphere011" parent="Sphere003" index="7"]
+
+transform = Transform( 0.272668, 0.0119595, -0.167603, -0.10121, 0.266705, -0.145625, 0.134128, 0.176938, 0.230834, 73.6041, -45.7361, 53.2131 )
+
+[node name="Sphere012" parent="Sphere003" index="8"]
+
+transform = Transform( 0.135914, 0.360136, 0.337783, -0.423763, 0.264893, -0.111913, -0.253417, -0.249804, 0.368302, 14.7241, -62.0759, -56.0603 )
+
+[node name="Sphere013" parent="Sphere003" index="9"]
+
+transform = Transform( 0.252659, -0.157205, 0.0395511, 0.098496, 0.20705, 0.193761, -0.128749, -0.150104, 0.225847, -70.7822, 54.0534, 4.54268 )
+
+[node name="Sphere014" parent="Sphere003" index="10"]
+
+transform = Transform( 0.206947, -0.174348, 0.096799, -0.197724, -0.197536, 0.0669254, 0.025933, -0.114789, -0.262193, 84.8784, 9.5609, -15.208 )
+
+[node name="Sphere015" parent="Sphere003" index="11"]
+
+transform = Transform( -0.41327, 0.0583351, 0.262477, -0.131057, 0.376553, -0.290037, -0.234779, -0.31288, -0.300123, 61.425, 58.6712, 62.0174 )
+
+[node name="Sphere016" parent="Sphere003" index="12"]
+
+transform = Transform( -0.135849, -0.0713529, -0.0405991, -0.0732342, 0.140802, -0.00241112, 0.0370982, 0.0166682, -0.153428, -54.7669, 63.0588, 55.8689 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+
+playback_speed = 0.3
+_sections_unfolded = [ "Playback Options" ]
+
+

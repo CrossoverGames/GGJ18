@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Interface/interface.gd" type="Script" id=1]
 [ext_resource path="res://Interface/buttons/launch-button.png" type="Texture" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://Interface/buttons/left-arrow.png" type="Texture" id=4]
 [ext_resource path="res://Interface/buttons/right-arrow.png" type="Texture" id=5]
 [ext_resource path="res://Interface/buttons/boost-button.png" type="Texture" id=6]
-[ext_resource path="res://Interface/buttons/break-button.png" type="Texture" id=7]
-[ext_resource path="res://Interface/buttons/shield-button.png" type="Texture" id=8]
-[ext_resource path="res://Interface/signal/signal-monitor.png" type="Texture" id=9]
-[ext_resource path="res://Interface/minimap.gd" type="Script" id=10]
-[ext_resource path="res://Interface/signal/signal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Interface/cooldown.gd" type="Script" id=7]
+[ext_resource path="res://Interface/buttons/break-button.png" type="Texture" id=8]
+[ext_resource path="res://Interface/buttons/shield-button.png" type="Texture" id=9]
+[ext_resource path="res://Interface/signal/signal-monitor.png" type="Texture" id=10]
+[ext_resource path="res://Interface/minimap.gd" type="Script" id=11]
+[ext_resource path="res://Interface/signal/signal.tscn" type="PackedScene" id=12]
 
 [node name="interface" type="CanvasLayer"]
 
@@ -150,7 +151,9 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Anchor", "Rect", "Textures" ]
+time = 2.0
 
 [node name="break" type="TextureButton" parent="." index="4"]
 
@@ -173,7 +176,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Rect", "Textures" ]
 
 [node name="shield" type="TextureButton" parent="." index="5"]
@@ -197,7 +200,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 _sections_unfolded = [ "Anchor", "Rect", "Textures" ]
 
 [node name="minimap" type="TextureRect" parent="." index="6"]
@@ -217,13 +220,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Anchor", "Rect" ]
 signal_interface_path = "res://Interface/signal/signal.tscn"
 
-[node name="signal" parent="minimap" index="0" instance=ExtResource( 11 )]
+[node name="signal" parent="minimap" index="0" instance=ExtResource( 12 )]
 
 visible = false
 margin_bottom = 1062.0

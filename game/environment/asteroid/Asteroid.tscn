@@ -1,40 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://environment/EnvironmentObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://environment/asteroid/Asteroid.gd" type="Script" id=2]
+[ext_resource path="res://environment/asteroid/asteroid-1.dae" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape" id=2]
+
+radius = 1.23723
+height = 1.96313
 
 [sub_resource type="SphereShape" id=1]
 
 radius = 1.22069
-
-[sub_resource type="SphereMesh" id=2]
-
-radius = 1.0
-height = 2.0
-radial_segments = 64
-rings = 32
-is_hemisphere = false
 
 [node name="Asteroid" index="0" groups=[
 "asteroid",
 "obstacle",
 ] instance=ExtResource( 1 )]
 
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "collision" ]
+_sections_unfolded = [ "Transform", "collision" ]
+active = true
+delay_time = 0
 
 [node name="shape" parent="." index="0"]
 
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -0.132224, 0.536132, 0 )
+shape = SubResource( 2 )
 disabled = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="mesh" parent="." index="1"]
 
-mesh = SubResource( 2 )
-material/0 = null
+transform = Transform( 0.216133, 0.0387712, 0.0112699, -0.0403759, 0.207543, 0.0603283, 0, -0.0613719, 0.211133, -0.4196, -0.64979, 0.399117 )
+visible = false
+_sections_unfolded = [ "material" ]
 
-[node name="Area" type="Area" parent="." index="2"]
+[node name="mesh-dae" parent="." index="2" instance=ExtResource( 3 )]
 
+transform = Transform( 1.09473, -0.95149, 0, 0.95149, 1.09473, 0, 0, 0, 1.45043, 10.0713, 9.21865, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area" type="Area" parent="." index="3"]
+
+editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0

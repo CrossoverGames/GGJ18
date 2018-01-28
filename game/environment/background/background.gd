@@ -27,6 +27,9 @@ func delete_body(body):
 func _process(delta):
 	var chance = randi()%100
 	
+	var wr = weakref(ship)
+	if not wr.get_ref(): return
+	
 	if (chance > (100 - draw_chance)) and ship.flying:
 		var rnd = randi()%4
 		var x_rnd = (randi()%200 - 100)

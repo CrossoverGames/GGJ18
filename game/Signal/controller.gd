@@ -54,6 +54,8 @@ func create_signal(type):
 	canvas.add_signal_to_minimap(1 / delay)
 
 func on_ship_destroyed():
+	for sig in get_children(): sig.ship = null
+	
+	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().reload_current_scene()
-	#for sig in get_children(): sig.ship = null
 	
