@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://environment/asteroid/AsteroidSpawner.gd" type="Script" id=1]
 [ext_resource path="res://environment/asteroid/Asteroid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://health pack/health pack.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -15,10 +16,11 @@ extents = Vector3( 75.1837, 1, 55 )
 
 extents = Vector3( 10, 1, 10 )
 
-[node name="AsteroidSpawner" type="Spatial"]
+[node name="AsteroidSpawner" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 asteroid_scene = ExtResource( 2 )
+health_pack_scene = ExtResource( 3 )
 tracks_path = NodePath("../tracks")
 rate = 1.0
 speed = 5.0
