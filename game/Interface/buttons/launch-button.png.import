@@ -7,10 +7,10 @@ path="res://.import/launch-button.png-2b02915a05ba029776d467f5d608df8c.stex"
 [deps]
 
 source_file="res://Interface/buttons/launch-button.png"
-source_md5="fb3e98fa54cad88496d11a7c7836be5f"
+source_md5="69a184f217d856960c17760a49164877"
 
 dest_files=[ "res://.import/launch-button.png-2b02915a05ba029776d467f5d608df8c.stex" ]
-dest_md5="0c4f5de99c23a7f546fa45768bda60c9"
+dest_md5="fcfe9e5bd8707befd3121fc0c0de4d85"
 
 [params]
 

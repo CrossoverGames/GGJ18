@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex"
+path="res://.import/left-arrow-pressed.png-617b064bf570c3b99c41cf9cc82cbfe0.stex"
 
 [deps]
 
-source_file="res://Interface/buttons/separate-button.png"
-source_md5="4f3e36cbe08f2158e3632a764f887de3"
+source_file="res://Interface/buttons/left-arrow-pressed.png"
+source_md5="24ba6564c9c47c55b53016e0392652f9"
 
-dest_files=[ "res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex" ]
-dest_md5="6eb4aa1f71d30f76db85fbf44b753f36"
+dest_files=[ "res://.import/left-arrow-pressed.png-617b064bf570c3b99c41cf9cc82cbfe0.stex" ]
+dest_md5="4ef86fac8f90f7c7a9261d3d6d54b94b"
 
 [params]
 

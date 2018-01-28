@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex"
+path="res://.import/break-button-pressed.png-59603c7cc477f3667fa35979281910ee.stex"
 
 [deps]
 
-source_file="res://Interface/buttons/separate-button.png"
-source_md5="4f3e36cbe08f2158e3632a764f887de3"
+source_file="res://Interface/buttons/break-button-pressed.png"
+source_md5="fe57ba5e3b1d04e54ab73e41f2377d08"
 
-dest_files=[ "res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex" ]
-dest_md5="6eb4aa1f71d30f76db85fbf44b753f36"
+dest_files=[ "res://.import/break-button-pressed.png-59603c7cc477f3667fa35979281910ee.stex" ]
+dest_md5="a0c82e9bfb10732c8b9b60094075b99f"
 
 [params]
 

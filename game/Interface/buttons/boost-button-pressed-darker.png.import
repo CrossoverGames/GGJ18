@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex"
+path="res://.import/boost-button-pressed-darker.png-6c957db983e446eec8b2f8303a07171e.stex"
 
 [deps]
 
-source_file="res://Interface/buttons/separate-button.png"
-source_md5="4f3e36cbe08f2158e3632a764f887de3"
+source_file="res://Interface/buttons/boost-button-pressed-darker.png"
+source_md5="f5fa3c359cac6a820a9b50620345c0b3"
 
-dest_files=[ "res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex" ]
-dest_md5="6eb4aa1f71d30f76db85fbf44b753f36"
+dest_files=[ "res://.import/boost-button-pressed-darker.png-6c957db983e446eec8b2f8303a07171e.stex" ]
+dest_md5="9d063f6a5b72eceb43a351bffc0d4d4c"
 
 [params]
 

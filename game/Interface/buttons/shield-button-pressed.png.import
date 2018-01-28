@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex"
+path="res://.import/shield-button-pressed.png-1dbabf8285ae2b4e2ee95c490a92f407.stex"
 
 [deps]
 
-source_file="res://Interface/buttons/separate-button.png"
-source_md5="4f3e36cbe08f2158e3632a764f887de3"
+source_file="res://Interface/buttons/shield-button-pressed.png"
+source_md5="a2f98324fd76729fa9aeee979d6ad7c7"
 
-dest_files=[ "res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex" ]
-dest_md5="6eb4aa1f71d30f76db85fbf44b753f36"
+dest_files=[ "res://.import/shield-button-pressed.png-1dbabf8285ae2b4e2ee95c490a92f407.stex" ]
+dest_md5="1e363ca00856fc1ae9e88b7d5648fb92"
 
 [params]
 

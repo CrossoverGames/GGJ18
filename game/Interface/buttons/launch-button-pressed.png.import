@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex"
+path="res://.import/launch-button-pressed.png-b93b0be67fd5aaf3328aefae1c26d14a.stex"
 
 [deps]
 
-source_file="res://Interface/buttons/separate-button.png"
-source_md5="4f3e36cbe08f2158e3632a764f887de3"
+source_file="res://Interface/buttons/launch-button-pressed.png"
+source_md5="d03a935018ae0c10bc54ea48091bb0a9"
 
-dest_files=[ "res://.import/separate-button.png-59c3b255ed9e9fb10338359d32d060a7.stex" ]
-dest_md5="6eb4aa1f71d30f76db85fbf44b753f36"
+dest_files=[ "res://.import/launch-button-pressed.png-b93b0be67fd5aaf3328aefae1c26d14a.stex" ]
+dest_md5="3b26b0f13c21a70d758246a736c2254e"
 
 [params]
 

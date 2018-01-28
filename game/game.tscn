@@ -275,8 +275,8 @@ directional_shadow_max_distance = 200.0
 
 [connection signal="destroyed" from="ship" to="controller" method="on_ship_destroyed"]
 
-[connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
-
 [connection signal="separated" from="ship" to="SatteliteSpawner" method="setup"]
+
+[connection signal="separated" from="ship" to="AsteroidSpawner" method="setup"]
 
 
