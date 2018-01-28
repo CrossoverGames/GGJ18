@@ -7,7 +7,7 @@
 
 extents = Vector3( 32.3935, 1, 1 )
 
-[node name="Sattelite" type="KinematicBody" index="0" groups=[
+[node name="Sattelite" type="KinematicBody" groups=[
 "obstacle",
 "sattelite",
 ]]

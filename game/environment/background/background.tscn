@@ -2,26 +2,12 @@
 
 [ext_resource path="res://environment/background/background.gd" type="Script" id=1]
 
-[node name="background" type="Node"]
+[node name="background" type="Spatial"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
 script = ExtResource( 1 )
-draw_chance = 3
-
-[node name="Camera" type="Camera" parent="." index="0"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3139 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
 _sections_unfolded = [ "Transform" ]
+draw_chance = 3
+ship_path = null
 
 
